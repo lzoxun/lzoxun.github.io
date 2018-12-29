@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Lzo勋">
 <meta property="og:description" content="==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-28T15:58:15.139Z">
+<meta property="og:updated_time" content="2018-12-29T05:41:04.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用基础">
 <meta name="twitter:description" content="==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
@@ -438,7 +438,23 @@ git status pop 取出贮藏内容
 3、复制公钥的内容到远程仓库(GitHub 或 开源中国等）
 
    添加成功后本台计算机就能和远程仓库进行交换了
-</code></pre>
+</code></pre><h2 id="SSH-key-设置"><a href="#SSH-key-设置" class="headerlink" title="SSH key 设置"></a>SSH key 设置</h2><blockquote>
+<p>https 和 SSH 的区别：<br>1、前者可以随意克隆github上的项目，而不管是谁的；而后者则是你必须是你要克隆的项目的拥有者或管理员，且需要先添加 SSH key ，否则无法克隆。</p>
+</blockquote>
+<blockquote>
+<p>2、https url 在push的时候是需要验证用户名和密码的；而 SSH 在push的时候，是不需要输入用户名的，如果配置SSH key的时候设置了密码，则需要输入密码的，否则直接是不需要输入密码的。</p>
+</blockquote>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>1、git Bash 输入 检查(C:\Users\Administrator.ssh) 的状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br><span class="line">$ ls</span><br></pre></td></tr></table></figure></p>
+<p>私钥 : id_rsa<br>公钥 : id_rsa.pub<br>没有这两个文件就要重新生成<br>2、创建ssh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;869664233@qq.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p>-t 指定密钥类型，默认是 rsa ，可以省略。<br>-C 设置注释文字，比如邮箱。<br>-f 指定密钥文件存储文件名。<br>这些参数并不重要 直接 ssh-keygen 三次回车就可以了<br>第一次存放路经 后两次是push文件时设置的密码，如果没设置那么push的时候就不需要输入密码，直接提交到github上了</p>
+<p>3、添加到远程仓库</p>
+<blockquote>
+<p>找到 公钥  id_rsa.pub 复制内容<br>找到GitHub Sittings -&gt; SSH and GPG keys -&gt; new SSH key<br>粘贴 名字随意</p>
+</blockquote>
+<p>4、测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p>当你输入以上代码时，会有一段警告代码，这是正常的，你输入 yes 回车既可。如果你创建 SSH key 的时候设置了密码，接下来就会提示你输入密码，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase for key &apos;/c/Users/Administrator/.ssh/id_rsa&apos;:</span><br></pre></td></tr></table></figure></p>
+<p>5、如果某个GitHub账号上有某台设备的ssh key 这台设备就与对应账号连接</p>
+
       
     </div>
     
@@ -532,8 +548,17 @@ git status pop 取出贮藏内容
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -563,7 +588,7 @@ git status pop 取出贮藏内容
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -602,6 +627,22 @@ git status pop 取出贮藏内容
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-key-设置"><span class="nav-number">1.</span> <span class="nav-text">SSH key 设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">1.1.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
