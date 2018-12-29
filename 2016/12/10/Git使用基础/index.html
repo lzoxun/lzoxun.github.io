@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
+<meta name="description" content="GIT基础==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
 <meta name="keywords" content="版本控制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git使用基础">
 <meta property="og:url" content="http://yoursite.com/2016/12/10/Git使用基础/index.html">
 <meta property="og:site_name" content="Lzo勋">
-<meta property="og:description" content="==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
+<meta property="og:description" content="GIT基础==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-29T05:41:04.120Z">
+<meta property="og:updated_time" content="2018-12-29T05:49:53.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用基础">
-<meta name="twitter:description" content="==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
+<meta name="twitter:description" content="GIT基础==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
 
 
 
@@ -333,7 +333,7 @@
       
 
       
-        <p>==&gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help）</p>
+        <h2 id="GIT基础"><a href="#GIT基础" class="headerlink" title="GIT基础"></a>GIT基础</h2><p>==&gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help）</p>
 <p>==&gt; git init  //创建本地git仓库</p>
 <p>==&gt; git config -h //帮助</p>
 <p>==&gt; git config –list  //查看git所有配置</p>
@@ -422,23 +422,11 @@ git status pop 取出贮藏内容
 3、该文件可存在于个个目录
 </code></pre><p>==&gt; git log 查看日志</p>
 <p>   1、commit id  重要</p>
-<p>==================远程仓库</p>
-<p>==&gt; github</p>
-<p>==&gt; 开源中国</p>
-<pre><code>本地仓库与远程仓库名必须相同 
-</code></pre><p>==&gt; 生产本机的ssh  </p>
-<pre><code>1、git下输入  ssh-keygen  连续回车生成公私钥（公私钥与本台计算机有关）
-
-2、公私钥匙用户家目录下的 .ssh 文件夹中
-
-   私钥 : id_rsa 
-
-   公钥 : id_rsa.pub
-
-3、复制公钥的内容到远程仓库(GitHub 或 开源中国等）
-
-   添加成功后本台计算机就能和远程仓库进行交换了
-</code></pre><h2 id="SSH-key-设置"><a href="#SSH-key-设置" class="headerlink" title="SSH key 设置"></a>SSH key 设置</h2><blockquote>
+<hr>
+<h2 id="SSH-key-设置"><a href="#SSH-key-设置" class="headerlink" title="SSH key 设置"></a>SSH key 设置</h2><blockquote>
+<p>设备的key添加到远程仓库(GitHub、开源中国等)上，这个设备就可以网那个GitHub账户上push东西了</p>
+</blockquote>
+<blockquote>
 <p>https 和 SSH 的区别：<br>1、前者可以随意克隆github上的项目，而不管是谁的；而后者则是你必须是你要克隆的项目的拥有者或管理员，且需要先添加 SSH key ，否则无法克隆。</p>
 </blockquote>
 <blockquote>
@@ -453,7 +441,6 @@ git status pop 取出贮藏内容
 </blockquote>
 <p>4、测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
 <p>当你输入以上代码时，会有一段警告代码，这是正常的，你输入 yes 回车既可。如果你创建 SSH key 的时候设置了密码，接下来就会提示你输入密码，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase for key &apos;/c/Users/Administrator/.ssh/id_rsa&apos;:</span><br></pre></td></tr></table></figure></p>
-<p>5、如果某个GitHub账号上有某台设备的ssh key 这台设备就与对应账号连接</p>
 
       
     </div>
@@ -637,7 +624,7 @@ git status pop 取出贮藏内容
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-key-设置"><span class="nav-number">1.</span> <span class="nav-text">SSH key 设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">1.1.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT基础"><span class="nav-number">1.</span> <span class="nav-text">GIT基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-key-设置"><span class="nav-number">2.</span> <span class="nav-text">SSH key 设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">2.1.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></div>
             
 
           </div>
