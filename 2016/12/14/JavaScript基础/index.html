@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基础语法js六中数据类型[number,boolean,string,null,undefined,object]number  1234console.log(Number.MAX_VALUE) //Number的最大值console.log(Number.MIN_VALUE) //Number的最小值console.log(Number.MAX_VALUE + Number.MAX_VALUE">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript基础">
+<meta property="og:url" content="http://yoursite.com/2016/12/14/JavaScript基础/index.html">
+<meta property="og:site_name" content="Lzo勋">
+<meta property="og:description" content="基础语法js六中数据类型[number,boolean,string,null,undefined,object]number  1234console.log(Number.MAX_VALUE) //Number的最大值console.log(Number.MIN_VALUE) //Number的最小值console.log(Number.MAX_VALUE + Number.MAX_VALUE">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-28T13:12:43.454Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript基础">
+<meta name="twitter:description" content="基础语法js六中数据类型[number,boolean,string,null,undefined,object]number  1234console.log(Number.MAX_VALUE) //Number的最大值console.log(Number.MIN_VALUE) //Number的最小值console.log(Number.MAX_VALUE + Number.MAX_VALUE">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/14/JavaScript基础/">
+
+
+
+
+
+  <title>JavaScript基础 | Lzo勋</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+   <a href="https://www.lzoxun.top"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+      
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lzo勋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/14/JavaScript基础/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="勋戈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lzo勋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-14T22:59:50+08:00">
+                2016-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="js六中数据类型-number-boolean-string-null-undefined-object"><a href="#js六中数据类型-number-boolean-string-null-undefined-object" class="headerlink" title="js六中数据类型[number,boolean,string,null,undefined,object]"></a>js六中数据类型[number,boolean,string,null,undefined,object]</h4><pre><code>number
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.MAX_VALUE) //Number的最大值</span><br><span class="line">console.log(Number.MIN_VALUE) //Number的最小值</span><br><span class="line">console.log(Number.MAX_VALUE + Number.MAX_VALUE) //无穷大</span><br><span class="line">console.log(10/0)  //数学上没意义,计算机上无穷大</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>   ++n //先计算,再返回</p>
+<p>   n++ //先返回,再计算</p>
+<p>   ==  //只比较大小,不比较类型(或者 == 会对值进行隐式转换 , === 的不会)</p>
+<p>   比较运算符与逻辑非返回的一定是Boolean值</p>
+<p>   &amp;&amp;、|| 两边原则上是布尔类型的,不是的话会自动转换,返回一个boolean值<br>   (其中涉及到短路运算,如果一方以能觉得最终结果,另外一端就不会再算了)<br>   (js中,如果两边<code>不是布尔值</code>会得到具体的值,能算的哪边就返回哪边的值)</p>
+<h4 id="分支结构与循环"><a href="#分支结构与循环" class="headerlink" title="分支结构与循环"></a>分支结构与循环</h4><p>   break : 可以用于循环,switch,跳分支结构与循环结构<br>   continue : 只能用于循环,跳出循环<br>   break后可以跟标志位跳到指定的位置 </p>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>   直接定义的函数<strong>同一作用域下</strong>函数可以先调用后加载称为预加载<br>   变量赋值方式没有预加载</p>
+<p>   arguments 属性代表其处于的函数的参数数组</p>
+<p>   递归 : 函数里面嵌套本身<br>   function fn(){ fn() } === function(){ arquments.calee() }<br>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//最简单的递归案例</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jieCeng</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>( n==<span class="number">1</span> )&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">//return n * jieCeng(n - 1);</span></span><br><span class="line">     <span class="keyword">return</span> n * calee(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>   耦合度 : 一次代码发生改变导致其他代码也发生改变(所以程序要低耦合)</p>
+<h3 id="DOM操作（通过Js对D操作Dom-）"><a href="#DOM操作（通过Js对D操作Dom-）" class="headerlink" title="DOM操作（通过Js对D操作Dom ）"></a>DOM操作（通过Js对D操作Dom ）</h3><h4 id="获取-get"><a href="#获取-get" class="headerlink" title="获取(get)"></a>获取(get)</h4><p>(1) 获取原生节点</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">""</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">""</span>); <span class="comment">//通过元素获取 返回HTMLCollection类数组</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByName(<span class="string">""</span>); <span class="comment">//通过类名获取 返回HTMLCollection类数组 通过[i]和.item(i) 得到某一个</span></span><br></pre></td></tr></table></figure>
+<p>(2) 基于节点获取节点</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果元素后直接跟文本或空格,得到的就是文本节点</span></span><br><span class="line">oDiv.lastChild/oDiv.firstChild.nodeValue</span><br><span class="line"></span><br><span class="line"><span class="comment">//获得所有子节点(主流浏览器会回车这类的节点,ie678没有)</span></span><br><span class="line">oDiv.childNodes</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取兄弟节点</span></span><br><span class="line">oDiv.previousSibling/oDiv.nextSibling</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取父节点</span></span><br><span class="line">oDiv.parentNode</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取||设置属性节点</span></span><br><span class="line"><span class="comment">//(1) 只获取设置w3c规定的属性   //jQuery的prop()</span></span><br><span class="line">    oDiv.属性   修改input的type属性含有兼容性问题</span><br><span class="line"></span><br><span class="line"><span class="comment">//(2) w3c规定的属性和自定义属性 //jQuery的attr()</span></span><br><span class="line">    oDiv.getAttribute(<span class="string">""</span>);    </span><br><span class="line">    oDiv.setAttribute(<span class="string">""</span>,<span class="string">""</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">//(3) oDiv.attributes  //获取所有属性</span></span><br></pre></td></tr></table></figure>
+<p>(3) 节点类型(nodeType)</p>
+<pre><code>node.nodeType == 1  //元素节点
+node.nodeType == 2  //属性节点
+node.nodeType == 3  //文本节点
+node.nodeType == 4  //文档节点
+</code></pre><p>(4) 节点的创建和追加与删除</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">元素节点: <span class="built_in">document</span>.createElement(<span class="string">"标签名称"</span>)</span><br><span class="line">文本节点: <span class="built_in">document</span>.createTextNode(<span class="string">"标签名称"</span>)</span><br><span class="line">属性节点: node.setAttribute(<span class="string">"节点名"</span>,<span class="string">"节点值"</span>)</span><br><span class="line"></span><br><span class="line">节点追加: <span class="string">"父节点"</span>.appendChild(<span class="string">"子节点"</span>)</span><br><span class="line">          <span class="string">"父节点"</span>.insertBefore(<span class="string">"newnode"</span>,<span class="string">"oldnode"</span>) <span class="comment">//nownode 放到 oldnode前面</span></span><br><span class="line">          <span class="string">"父节点"</span>.replaceChild(<span class="string">"newnode"</span>,<span class="string">"oldnode"</span>) <span class="comment">//nownode 替换到 oldnode</span></span><br><span class="line"></span><br><span class="line">删除节点: <span class="string">"父节点"</span>.removeChild(<span class="string">"子节点"</span>) </span><br><span class="line">          <span class="string">"节点"</span>.remove()</span><br></pre></td></tr></table></figure>
+<p>(5) 节点的复制</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node.cloneNode(<span class="literal">true</span>/<span class="literal">false</span>) </span><br><span class="line"><span class="comment">// true  复制本身节点和属性 + 内部节点</span></span><br><span class="line"><span class="comment">// false 只复制本身节点和属性</span></span><br></pre></td></tr></table></figure>
+<p>(6) DOM的css样式操作<br>    – 操作行内样式<br>    获取css样式 : node.style.css样式名称<br>    设置css样式 : node.style.css样式名称 = “样式值” //有则修改没有则添加<br>-<br>    复合样式要用驼峰式命名(因为变量规则没有 - 字符)<br>    – 操作外部样式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.getComputedStyle) &#123;</span><br><span class="line"></span><br><span class="line">    style = <span class="built_in">window</span>.getComputedStyle(obj, <span class="literal">null</span>);    <span class="comment">// 非IE</span></span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123; </span><br><span class="line"></span><br><span class="line">    style = obj.currentStyle;  <span class="comment">// IE</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"width="</span> + style.width + <span class="string">"height="</span> + style.height)</span><br></pre></td></tr></table></figure></p>
+<h3 id="BOM操作-操作浏览器主要属性和方法）node上是无法使用的"><a href="#BOM操作-操作浏览器主要属性和方法）node上是无法使用的" class="headerlink" title="BOM操作(操作浏览器主要属性和方法）node上是无法使用的"></a>BOM操作(操作浏览器主要属性和方法）node上是无法使用的</h3><h4 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>) <span class="built_in">window</span>.navigator            <span class="comment">//浏览器信息</span></span><br><span class="line">    <span class="built_in">window</span>.navigator.appVersion <span class="comment">//浏览器版本信息</span></span><br><span class="line">    <span class="built_in">window</span>.navigator.userAgent  <span class="comment">//浏览器用户代理信息</span></span><br><span class="line"></span><br><span class="line">(<span class="number">2</span>) <span class="built_in">window</span>.location                                  <span class="comment">//地址栏信息</span></span><br><span class="line">    <span class="built_in">window</span>.location.reload();                        <span class="comment">//刷新</span></span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="built_in">window</span>.location.href;     <span class="comment">//刷新</span></span><br><span class="line"></span><br><span class="line">(<span class="number">3</span>) <span class="built_in">window</span>.history               <span class="comment">//历史记录信息</span></span><br><span class="line">    <span class="built_in">window</span>.history.length        <span class="comment">//历史记录数码</span></span><br><span class="line">    <span class="built_in">window</span>.history.back()        <span class="comment">//后退</span></span><br><span class="line">    <span class="built_in">window</span>.history.go(n)         <span class="comment">//到达任意想去的历史记录(0 刷新 1 前进1页 2 后退一页)</span></span><br><span class="line">(<span class="number">4</span>) <span class="built_in">window</span>.screen                           <span class="comment">//屏幕信息</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.screen.height)       <span class="comment">//高度</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.screen.width)        <span class="comment">//宽度</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.screen.availHeight)  <span class="comment">//浏览器可用高度</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.screen.availWidth)   <span class="comment">//浏览器可用宽度(可视区宽高)</span></span><br><span class="line">(<span class="number">5</span>) <span class="built_in">window</span>.document   <span class="comment">//文档对象</span></span><br></pre></td></tr></table></figure>
+<h4 id="window对象方法"><a href="#window对象方法" class="headerlink" title="window对象方法"></a>window对象方法</h4><p>alert() || confirm() || open() || close() || print() || setInterval() 等</p>
+<h3 id="事件操作"><a href="#事件操作" class="headerlink" title="事件操作"></a>事件操作</h3><h4 id="DOM1级事件"><a href="#DOM1级事件" class="headerlink" title="DOM1级事件"></a>DOM1级事件</h4><p>(1) 直接写在行间的事件,相当于原生的属性</p>
+<p>(2) 定义方式<br>    <div onclick="funcName()"></div><br>    oDiv.onclick = function(){}</p>
+<p>(3) 取消DOM1事件: oDiv.onclick = null;</p>
+<p>(4) return false 取消浏览器默认行为只对DOM1级事件有效(兼容IE低版本)</p>
+<h4 id="DOM2级事件"><a href="#DOM2级事件" class="headerlink" title="DOM2级事件"></a>DOM2级事件</h4><p>(1) 相对于DOM1级的优势<br>    给同一个对象设置多个相同的事件<br>    可以操作事件流</p>
+<p>(2) 主流浏览器<br>    监听事件: oDiv.addEventListener(“无on事件名”,function(){},事件流)//匿名函数<br>    监听事件取消: oDiv.removeEventListener(“事件”,”函数名”,事件流) //不能取消匿名函数<br>-<br>    事件流: true 事件捕获 、 false 事件冒泡<br>    事件冒泡 : 从外往内依次执行<br>    事件捕获 : 从内往外依次执行<br>-<br>    阻止事件冒泡 : event.stopPropagation()<br>    阻止默认行为 : event.preventDefault()</p>
+<p>(3) IE9以下 非主流<br>    监听事件 : oDiv.attachEvent(“有on事件名”,function(){}) //只支持冒泡,所以没有第三个参数<br>    监听事件取消 : oDiv.detachEvent(“有on事件名”,function(){})<br>-<br>    阻止事件冒泡 : window.event.cancelBubble()<br>    阻止默认行为 : window.event.returnValue()</p>
+<p>(4) 事件对象<br>    var event = event || windwo.event;<br>    event.clientX  获取鼠标相对于可视区的坐标<br>    event.pageX    获取鼠标相对于页面的坐标<br>    event.screenX  获取鼠标相对于屏幕的坐标</p>
+<h3 id="作用域、闭包"><a href="#作用域、闭包" class="headerlink" title="作用域、闭包"></a>作用域、闭包</h3><h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><p>1、定义 : 作用域就是变量在当前环境now、内部环境fn、再内部环境fn2/fn3….都起作用的现象连成的一条链 称作<code>作用域链</code></p>
+<p>2、作用特点<br>(1) 内部环境能使用外部环境的变量,反之不行<br>(2) 变量或函数的作用域是声明是决定的,而不是运行时</p>
+<p>3、作用于中个个同名变量的优先级<br>内部变量&gt;&gt;内部函数&gt;&gt;形参&gt;&gt;外部变量</p>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><p>(1) 定义 : 可以理解为一个外部函数嵌套一个内部函数(这个内部函数就是闭包),形成闭包的条件是外部函数通过return 将内部函数返回出来<br>           无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getfn0 = waifn(<span class="number">100</span>);</span><br><span class="line"><span class="keyword">var</span> getfn1 = waifn(<span class="number">110</span>);</span><br><span class="line"><span class="keyword">var</span> getfn2 = waifn(<span class="number">120</span>);</span><br><span class="line"><span class="comment">//getfn0/1/2 都是互相独立的没有不好互相影响</span></span><br><span class="line"><span class="comment">//getfn() === neifn0()</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">waifn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">neifn</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">"bib"</span>)&#125;</span><br><span class="line">    <span class="keyword">return</span> neifn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>(2) 特点<br>时外部环境能通过闭包访问内部函数的变量</p>
+<p>(3) 案例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">  arr[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">arr[<span class="number">0</span>](); <span class="comment">//4</span></span><br><span class="line">arr[<span class="number">1</span>](); <span class="comment">//4</span></span><br><span class="line">arr[<span class="number">2</span>](); <span class="comment">//4</span></span><br><span class="line">arr[<span class="number">3</span>](); <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+<p>以上的结果都是4<br>for循环生成4个访问 i 的函数,for循环之后i的值已经定格为4了,所以输出都是4<br>for循环的作用其实就是生产i次循环体</p>
+<p>或者将i存起来,调用是去除对应的i值<br>所以必须在for循环里面调用才行(匿名函数自执行虽然能解决但是不能再外面灵活调用)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">  arr[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(n)</span><br><span class="line">  &#125;)(i)  <span class="comment">//调用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>]();</span><br><span class="line"></span><br><span class="line">这样arr得到的就是执行的返回值,就能不能调用了</span><br></pre></td></tr></table></figure>
+<p>如果一定要在外面使用,可以用<code>闭包</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">    arr[i] = waifn(i)  <span class="comment">//调用</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">waifn</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">neifn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         <span class="built_in">console</span>.log(n)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> neifn;</span><br><span class="line">&#125;</span><br><span class="line">arr[<span class="number">0</span>]();</span><br><span class="line">arr[<span class="number">1</span>]();</span><br><span class="line">arr[<span class="number">2</span>]();</span><br><span class="line">arr[<span class="number">3</span>]();</span><br><span class="line"></span><br><span class="line"><span class="comment">//也能使用匿名</span></span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">    arr[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>]();</span><br><span class="line">arr[<span class="number">1</span>]();</span><br><span class="line">arr[<span class="number">2</span>]();</span><br><span class="line">arr[<span class="number">3</span>]();</span><br></pre></td></tr></table></figure>
+<h3 id="JS中的面向对象"><a href="#JS中的面向对象" class="headerlink" title="JS中的面向对象"></a>JS中的面向对象</h3><h4 id="字面量方式创建对象"><a href="#字面量方式创建对象" class="headerlink" title="字面量方式创建对象"></a>字面量方式创建对象</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name : <span class="string">"liao"</span>,</span><br><span class="line">  say : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="构造函数方式创建对象"><a href="#构造函数方式创建对象" class="headerlink" title="构造函数方式创建对象"></a>构造函数方式创建对象</h4><p>function Tiger(){</p>
+<p>}</p>
+<p>1、call() 和 apply  让一个函数可以调用另外一个函数的方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fn.call(obj,fn参数<span class="number">1</span>、......)  <span class="comment">//将fn所在的作用域变为obj</span></span><br><span class="line">fn.apply(obj,[fn参数<span class="number">1</span>、......])  <span class="comment">//将fn所在的作用域变为obj</span></span><br><span class="line"></span><br><span class="line">在第二个构造函数内 : Person.call(<span class="keyword">this</span>);  <span class="comment">//这个构造函数继承了Person 构造函数部分（子构造函数）</span></span><br></pre></td></tr></table></figure></p>
+<p>2、构造器<br>var obj = new Tiger();<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//new内部的动作</span></span><br><span class="line"><span class="comment">// Cat.prototype</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params"></span>) </span>&#123;  <span class="comment">//cat： 猫</span></span><br><span class="line">    <span class="keyword">this</span> = &#123;&#125;;  <span class="comment">//让this 指向一个空对象。</span></span><br><span class="line">    <span class="keyword">this</span>.__proto__ = Cat.prototype;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">    <span class="keyword">this</span>.show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'1123'</span>;<span class="comment">//污染全局</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// return &#123;</span></span><br><span class="line">    <span class="comment">//  name: 12</span></span><br><span class="line">    <span class="comment">// &#125;;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// new： 操作符，   a+b    -  * </span></span><br><span class="line">  <span class="keyword">var</span> cat = <span class="keyword">new</span> Cat(); <span class="comment">//通过构造函数 构造一个对象出来。</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// new: 内部的原理，</span></span><br><span class="line">  <span class="comment">// 第0步： 在内存中开辟一块空间。</span></span><br><span class="line">  <span class="comment">// 第一步：创建一个新空对象。</span></span><br><span class="line">  <span class="comment">// 第二步： 把this 指向到这个空对象。</span></span><br><span class="line">  <span class="comment">// 第三步： 把空对象的 内部原型 指向 构造函数的原型对象。</span></span><br><span class="line">  <span class="comment">// 第四步： 当构造函数执行完成后，如果么有return的话，那么把当前空对象返回。</span></span><br></pre></td></tr></table></figure></p>
+<p>obj.constructor;  //获得构造器<br>obj instanceof Tiger  //判断obj是不是String的实例对象 返回Boolean值</p>
+<p>(3) js的封装、继承、多肽<br>封装的成员<br>    公开成员: 构造函数内通过<code>this</code>赋予的成员<br>    私有成员: 构造函数内通过<code>var</code>申明的成员<br>继承(原型继承)<br>    –call方法<br>      构造函数中: Person.call(this);<br>    -<br>    –构造函数prototype继承对象<br>      Tiger.prototype = cat对象/new Person(); //继承其本身与构造器与原型中所以属性<br>    -<br>    –prototype添加属性和方法<br>      Tiger.prototype.xxx = xxx;<br>-<br>      如果有继承对象要先继承对象再继承单一成员,对象只能继承一个<br>call继承<br>    构造函数中: Person.call(this);<br>    函数原型中: Employee.prototype = new Person();//创建这个实例对象时，上层构造函数也会给它设置对象成员</p>
+<p>原型链继承</p>
+<p>当从一个对象那里读取属性或调用方法时，如果该对象自身不存在这样的属性或方法，就会去自己关联的 prototype 对<br>象那里寻找；如果 prototype 没有，又会去 prototype 自己关联的前辈 prototype 那里寻找，直到找到或追溯过程结束为止。</p>
+<p>原型链的最末端，就是 Object 构造函数 prototype 属性指向的那一个原型对象</p>
+<p> Function, Boolean, String, Date 和 RegExp 这些的 prototype 都是从这个Object传承下来的，但他们各自又定义了自身的属性和方法，</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历对象</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> obj)&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(i + <span class="string">":"</span> obj[i])  <span class="comment">//这里不能用obj.i  不然会找obj的i属性</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">//查看obj的构造器</span></span><br><span class="line">   <span class="built_in">console</span>.log(obj.constructor)</span><br><span class="line"></span><br><span class="line">   <span class="comment">//obj.hasOwnProperty() 方法</span></span><br><span class="line">   <span class="keyword">if</span>(obj.hasOwnProperty(i))&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"hasOwnProperty判断出i是对象自身的成员,不是继承的"</span>)</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"hasOwnProperty判断出i不是对象自身的成员,是继承的"</span>)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>静态成员: 是构造函数直接.出来的，只能通过构造函数调用</p>
+<p>多肽 : 同样的操作实现多种状态<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js 通过arguments 是函数传入不同参数而做出不同的处理 可以算是多肽</span></span><br><span class="line"><span class="comment">//js 的this关键字可以体现多肽，其可以通过call、apply等方式任意代表其他对象</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="new-Object-方式创建对象"><a href="#new-Object-方式创建对象" class="headerlink" title="new Object() 方式创建对象"></a>new Object() 方式创建对象</h4><h3 id="异常-Exception"><a href="#异常-Exception" class="headerlink" title="异常 Exception"></a>异常 Exception</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  <span class="comment">//有可能产生异常的语句</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">  <span class="comment">//捕捉异常 e是异常信息对象</span></span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">  <span class="comment">//不管有没有异常最后一定执行的语句</span></span><br><span class="line">  <span class="built_in">console</span>.log()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><hr>
+<p>— js的编译过程是 先申明、后赋值<br>— js没有块级作用域 if(){} for(){} 里定义的变量外面也能用</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/13/RegExp/" rel="next" title="RegExp">
+                <i class="fa fa-chevron-left"></i> RegExp
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/18/ES6/" rel="prev" title="ES6">
+                ES6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/head2.jpg" alt="勋戈">
+            
+              <p class="site-author-name" itemprop="name">勋戈</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourliaozhongxun" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://lzoxun.top" target="_blank" title="Lzo勋">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Lzo勋</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础语法"><span class="nav-number">1.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js六中数据类型-number-boolean-string-null-undefined-object"><span class="nav-number">1.1.</span> <span class="nav-text">js六中数据类型[number,boolean,string,null,undefined,object]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符"><span class="nav-number">1.2.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分支结构与循环"><span class="nav-number">1.3.</span> <span class="nav-text">分支结构与循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">1.4.</span> <span class="nav-text">函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM操作（通过Js对D操作Dom-）"><span class="nav-number">2.</span> <span class="nav-text">DOM操作（通过Js对D操作Dom ）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取-get"><span class="nav-number">2.1.</span> <span class="nav-text">获取(get)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BOM操作-操作浏览器主要属性和方法）node上是无法使用的"><span class="nav-number">3.</span> <span class="nav-text">BOM操作(操作浏览器主要属性和方法）node上是无法使用的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象属性"><span class="nav-number">3.1.</span> <span class="nav-text">对象属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window对象方法"><span class="nav-number">3.2.</span> <span class="nav-text">window对象方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件操作"><span class="nav-number">4.</span> <span class="nav-text">事件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM1级事件"><span class="nav-number">4.1.</span> <span class="nav-text">DOM1级事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM2级事件"><span class="nav-number">4.2.</span> <span class="nav-text">DOM2级事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域、闭包"><span class="nav-number">5.</span> <span class="nav-text">作用域、闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">5.1.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包"><span class="nav-number">5.2.</span> <span class="nav-text">闭包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS中的面向对象"><span class="nav-number">6.</span> <span class="nav-text">JS中的面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字面量方式创建对象"><span class="nav-number">6.1.</span> <span class="nav-text">字面量方式创建对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数方式创建对象"><span class="nav-number">6.2.</span> <span class="nav-text">构造函数方式创建对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new-Object-方式创建对象"><span class="nav-number">6.3.</span> <span class="nav-text">new Object() 方式创建对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常-Exception"><span class="nav-number">7.</span> <span class="nav-text">异常 Exception</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">8.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">勋戈</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true}});</script></body>
+</html>

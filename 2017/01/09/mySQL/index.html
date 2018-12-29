@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="mySQL 简介1、mysql分客户的和服务端2、安装mysql，默认root 过程中可设置密码 直接下载 v5.7.3 密码：6ctv3、安装数据库管理工具Navicat for MySQL 直接下载 密码：k9xt4、管理工具链接mySql账户 (随机链接名,主机地址,端口号,数据库的用户名与密码)5、单位: 库 =&amp;gt; 表 =&amp;gt; 行:每条数据、列:字段或域6、项目中通过安装mysq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mySQL">
+<meta property="og:url" content="http://yoursite.com/2017/01/09/mySQL/index.html">
+<meta property="og:site_name" content="Lzo勋">
+<meta property="og:description" content="mySQL 简介1、mysql分客户的和服务端2、安装mysql，默认root 过程中可设置密码 直接下载 v5.7.3 密码：6ctv3、安装数据库管理工具Navicat for MySQL 直接下载 密码：k9xt4、管理工具链接mySql账户 (随机链接名,主机地址,端口号,数据库的用户名与密码)5、单位: 库 =&amp;gt; 表 =&amp;gt; 行:每条数据、列:字段或域6、项目中通过安装mysq">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-28T13:12:43.456Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mySQL">
+<meta name="twitter:description" content="mySQL 简介1、mysql分客户的和服务端2、安装mysql，默认root 过程中可设置密码 直接下载 v5.7.3 密码：6ctv3、安装数据库管理工具Navicat for MySQL 直接下载 密码：k9xt4、管理工具链接mySql账户 (随机链接名,主机地址,端口号,数据库的用户名与密码)5、单位: 库 =&amp;gt; 表 =&amp;gt; 行:每条数据、列:字段或域6、项目中通过安装mysq">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/09/mySQL/">
+
+
+
+
+
+  <title>mySQL | Lzo勋</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+   <a href="https://www.lzoxun.top"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+      
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lzo勋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/09/mySQL/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="勋戈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lzo勋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mySQL</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-09T19:53:36+08:00">
+                2017-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="mySQL-简介"><a href="#mySQL-简介" class="headerlink" title="mySQL 简介"></a>mySQL 简介</h3><p>1、mysql分客户的和服务端<br>2、安装mysql，默认root 过程中可设置密码 <a href="http://pan.baidu.com/s/1nv81CQd" target="_blank" rel="noopener">直接下载 v5.7.3</a> 密码：6ctv<br>3、安装数据库管理工具Navicat for MySQL <a href="http://pan.baidu.com/s/1eRTyuHW" target="_blank" rel="noopener">直接下载</a> 密码：k9xt<br>4、管理工具链接mySql账户 (随机链接名,主机地址,端口号,数据库的用户名与密码)<br>5、单位: 库 =&gt; 表 =&gt; 行:每条数据、列:字段或域<br>6、项目中通过安装mysql依赖包链接数据库</p>
+<h3 id="数据库的表"><a href="#数据库的表" class="headerlink" title="数据库的表"></a>数据库的表</h3><p>1、字段的属性:字段名、类型、长度、是否小数点、是否为空、是否为主键等;<br>2、主键的有点:一条数据的唯一标示、性能高、优先级高</p>
+<h3 id="mySQL-简单使用"><a href="#mySQL-简单使用" class="headerlink" title="mySQL 简单使用"></a>mySQL 简单使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/bin ==&gt; mysql.exe -uroot(u+账户名) -p  登入数据库</span><br><span class="line">//show databases;  展示数据库</span><br><span class="line">//create database 库名; 新建数据库</span><br><span class="line">//exit; 退出</span><br><span class="line">//修改密码 </span><br><span class="line">首先登录MySQL。 </span><br><span class="line">mysql&gt; use mysql; </span><br><span class="line">mysql&gt; update user set password=password(&apos;新密码&apos;) where user=&apos;root&apos; and host=&apos;localhost&apos;; </span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure>
+<h3 id="SQL-基础语法"><a href="#SQL-基础语法" class="headerlink" title="SQL 基础语法"></a>SQL 基础语法</h3><h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `node`.`user`(</span><br><span class="line"> `id` INT(11)  NOT NULL AUTO_INCREMENT,</span><br><span class="line"> `username` varchar(64)	 NOT NULL ,</span><br><span class="line">  `pass` varchar(64) NOT NULL ,</span><br><span class="line">  PRIMARY KEY (`id`) //主键为id</span><br><span class="line">  )</span><br><span class="line">ENGINE = InnoDB CHARSET=utf8; 设置编码</span><br></pre></td></tr></table></figure>
+<h4 id="四大语句-—-曾删改查"><a href="#四大语句-—-曾删改查" class="headerlink" title="四大语句  —-  曾删改查"></a>四大语句  —-  曾删改查</h4><h5 id="曾-INSERT"><a href="#曾-INSERT" class="headerlink" title="曾 INSERT"></a>曾 INSERT</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表 (字段列表) <span class="keyword">VALUES</span> (值列表)</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> usersheet (<span class="keyword">ID</span> , username , <span class="keyword">password</span>) <span class="keyword">VALUES</span> (<span class="number">0</span>,<span class="string">'lia'</span>,<span class="string">'123456'</span>);</span><br><span class="line"><span class="comment">#ID设置了自增用0占位</span></span><br></pre></td></tr></table></figure>
+<h5 id="删-DELETE"><a href="#删-DELETE" class="headerlink" title="删 DELETE"></a>删 DELETE</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表 <span class="keyword">WHERE</span> 条件</span><br></pre></td></tr></table></figure>
+<h5 id="改-UPDATE"><a href="#改-UPDATE" class="headerlink" title="改 UPDATE"></a>改 UPDATE</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> 表 <span class="keyword">SET</span> 字段=<span class="keyword">VALUE</span>,字段=<span class="keyword">VALUE</span> <span class="keyword">WHERE</span> 筛选条件</span><br><span class="line"><span class="comment">#不加筛选条件所有这个字段都会更改</span></span><br></pre></td></tr></table></figure>
+<h5 id="查-SELECT"><a href="#查-SELECT" class="headerlink" title="查 SELECT"></a>查 SELECT</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 什么(通配符) <span class="keyword">FROM</span> 表</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> usersheet;</span><br></pre></td></tr></table></figure>
+<h4 id="子句-顺序-WHERE-gt-GROUP-gt-ORDER-gt-LIMIT"><a href="#子句-顺序-WHERE-gt-GROUP-gt-ORDER-gt-LIMIT" class="headerlink" title="子句(顺序 WHERE =&gt; GROUP =&gt; ORDER =&gt; LIMIT)"></a>子句(顺序 WHERE =&gt; GROUP =&gt; ORDER =&gt; LIMIT)</h4><h5 id="WHERE-筛选"><a href="#WHERE-筛选" class="headerlink" title="WHERE 筛选"></a>WHERE 筛选</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WHERE 各种条件: &gt; &lt; AND OR ...</span><br></pre></td></tr></table></figure>
+<h5 id="ORDER-排序"><a href="#ORDER-排序" class="headerlink" title="ORDER 排序"></a>ORDER 排序</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ORDER BY 字段 ASC/DESC</span><br><span class="line"></span><br><span class="line">ASC  =&gt; 从小到大</span><br><span class="line">DESC =&gt; 从大到小</span><br><span class="line"></span><br><span class="line"><span class="comment">#多多条件排序</span></span><br><span class="line">ORDER BY 字段 ASC,字段 DESC <span class="comment">#如果前一种字段相同就按后一种排序</span></span><br></pre></td></tr></table></figure>
+<h5 id="GROUP-聚类-合并相同数据"><a href="#GROUP-聚类-合并相同数据" class="headerlink" title="GROUP 聚类(合并相同数据)"></a>GROUP 聚类(合并相同数据)</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GROUP BY 字段  <span class="comment">#以指定字段作为依据来分组 去重</span></span><br><span class="line"><span class="keyword">SELECT</span> 字段,<span class="keyword">COUNT</span>(字段) <span class="keyword">FROM</span> 表 <span class="keyword">GROUP</span> <span class="keyword">BY</span> 字段 <span class="comment">#得到每个不同字段出现几次</span></span><br><span class="line"></span><br><span class="line">统计的函数都可以用于 <span class="keyword">GROUP</span> 的记录</span><br></pre></td></tr></table></figure>
+<h5 id="LIMIT-限制"><a href="#LIMIT-限制" class="headerlink" title="LIMIT 限制"></a>LIMIT 限制</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LIMIT 10;  <span class="comment">#只要前十条</span></span><br><span class="line">LIMIT 2,3; <span class="comment">#从第二条开始，取三条</span></span><br></pre></td></tr></table></figure>
+<p>SQL语句标准写法<br>    关键字大写、(库、表、字段)需要用<code></code>引起来  不遵循也可以</p>
+<h3 id="连接mysql"><a href="#连接mysql" class="headerlink" title="连接mysql"></a>连接mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//js文件 模块</span><br><span class="line">const mysql = require(&quot;mysql&quot;);</span><br><span class="line"></span><br><span class="line">//1 连接</span><br><span class="line">//var db = mysql.createPool(&#123;用法一&#125;) //连接池 保持连接性能好</span><br><span class="line">var db = mysql.createConnection(&#123; </span><br><span class="line">         host: &apos;localhost&apos;, //主机名</span><br><span class="line">         user: &apos;root&apos;, //数据库用户名</span><br><span class="line">         password: &apos;123456&apos;, //用户对应得密码</span><br><span class="line">         database: &apos;lzoxun&apos; //要用的数据库名</span><br><span class="line">         //prot:&apos;3306&apos; 端口号 默认3306</span><br><span class="line">     &#125;)</span><br><span class="line"></span><br><span class="line">//2 查询  db.query(干什么,回调)</span><br><span class="line">              `SELECT * FROM usersheet`  `$&#123;bianliang&#125;`</span><br><span class="line">     db.query(&quot;SELECT * FROM `usersheet`;&quot;,function(err,data)&#123;</span><br><span class="line">         if(err)&#123;</span><br><span class="line">             console.log(&quot;出错了&quot;, err)</span><br><span class="line">         &#125;else&#123;</span><br><span class="line">             console.log(&quot;成功了&quot;, data)</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;)</span><br><span class="line"></span><br><span class="line">//注:通过SQL =&gt; Structured Query Language  结构化查询语句 进行交互</span><br><span class="line">//       SQL =&gt; 所有数据库操作的基础 </span><br><span class="line">//       所欲数据库都是通过SQL与编程语言通信的</span><br><span class="line">//       SQL == DBA</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/24/nodejs/" rel="next" title="nodejs">
+                <i class="fa fa-chevron-left"></i> nodejs
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/15/vue-js/" rel="prev" title="vue.js">
+                vue.js <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/head2.jpg" alt="勋戈">
+            
+              <p class="site-author-name" itemprop="name">勋戈</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourliaozhongxun" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://lzoxun.top" target="_blank" title="Lzo勋">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Lzo勋</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mySQL-简介"><span class="nav-number">1.</span> <span class="nav-text">mySQL 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的表"><span class="nav-number">2.</span> <span class="nav-text">数据库的表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mySQL-简单使用"><span class="nav-number">3.</span> <span class="nav-text">mySQL 简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-基础语法"><span class="nav-number">4.</span> <span class="nav-text">SQL 基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表"><span class="nav-number">4.1.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四大语句-—-曾删改查"><span class="nav-number">4.2.</span> <span class="nav-text">四大语句  —-  曾删改查</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#曾-INSERT"><span class="nav-number">4.2.1.</span> <span class="nav-text">曾 INSERT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删-DELETE"><span class="nav-number">4.2.2.</span> <span class="nav-text">删 DELETE</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#改-UPDATE"><span class="nav-number">4.2.3.</span> <span class="nav-text">改 UPDATE</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查-SELECT"><span class="nav-number">4.2.4.</span> <span class="nav-text">查 SELECT</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子句-顺序-WHERE-gt-GROUP-gt-ORDER-gt-LIMIT"><span class="nav-number">4.3.</span> <span class="nav-text">子句(顺序 WHERE =&gt; GROUP =&gt; ORDER =&gt; LIMIT)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#WHERE-筛选"><span class="nav-number">4.3.1.</span> <span class="nav-text">WHERE 筛选</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ORDER-排序"><span class="nav-number">4.3.2.</span> <span class="nav-text">ORDER 排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GROUP-聚类-合并相同数据"><span class="nav-number">4.3.3.</span> <span class="nav-text">GROUP 聚类(合并相同数据)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LIMIT-限制"><span class="nav-number">4.3.4.</span> <span class="nav-text">LIMIT 限制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接mysql"><span class="nav-number">5.</span> <span class="nav-text">连接mysql</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">勋戈</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true}});</script></body>
+</html>

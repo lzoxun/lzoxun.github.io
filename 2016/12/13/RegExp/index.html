@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="正则字符集==&amp;gt; 定义字符集(没有特殊要求就只匹配符合要求的第一个) [a-z]          匹配一个小写字母 [A-Z]          匹配一个大写字母 [ABC]          匹配 A || B || C 中的一个 [0-9]          匹配一个阿拉伯数字 [0-9a-zA-Z_]   匹配一个数字或字母或下划线 [0-9][a-z]     匹配一个数字和一个小">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RegExp">
+<meta property="og:url" content="http://yoursite.com/2016/12/13/RegExp/index.html">
+<meta property="og:site_name" content="Lzo勋">
+<meta property="og:description" content="正则字符集==&amp;gt; 定义字符集(没有特殊要求就只匹配符合要求的第一个) [a-z]          匹配一个小写字母 [A-Z]          匹配一个大写字母 [ABC]          匹配 A || B || C 中的一个 [0-9]          匹配一个阿拉伯数字 [0-9a-zA-Z_]   匹配一个数字或字母或下划线 [0-9][a-z]     匹配一个数字和一个小">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-28T13:12:43.455Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RegExp">
+<meta name="twitter:description" content="正则字符集==&amp;gt; 定义字符集(没有特殊要求就只匹配符合要求的第一个) [a-z]          匹配一个小写字母 [A-Z]          匹配一个大写字母 [ABC]          匹配 A || B || C 中的一个 [0-9]          匹配一个阿拉伯数字 [0-9a-zA-Z_]   匹配一个数字或字母或下划线 [0-9][a-z]     匹配一个数字和一个小">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/13/RegExp/">
+
+
+
+
+
+  <title>RegExp | Lzo勋</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+   <a href="https://www.lzoxun.top"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+      
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lzo勋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/13/RegExp/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="勋戈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lzo勋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">RegExp</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-13T07:01:39+08:00">
+                2016-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="正则字符集"><a href="#正则字符集" class="headerlink" title="正则字符集"></a>正则字符集</h2><p>==&gt; 定义字符集(没有特殊要求就只匹配符合要求的第一个)</p>
+<pre><code>[a-z]          匹配一个小写字母
+[A-Z]          匹配一个大写字母
+[ABC]          匹配 A || B || C 中的一个
+[0-9]          匹配一个阿拉伯数字
+[0-9a-zA-Z_]   匹配一个数字或字母或下划线
+[0-9][a-z]     匹配一个数字和一个小写字母
+</code></pre><p>==&gt; 特别字符集</p>
+<pre><code>* : 其前面那个单元出现0次或以上(还是单次匹配 如:[0-9] 返回 &quot;123-4&quot; 中的123)
++ : 其前面那个单元出现1次或以上(还是单次匹配 如:[0-9] 返回 &quot;123-4&quot; 中的123)
+？: 其前面那个单元出现1次或不出现
+| : 或 先匹配左边的 如果没有就匹配右边的
+. : 可以代替出来 \n(换行之外的任意字符)
+\ : 转义字符( \* 这个*就没有前面的匹配功能了)
+$ : 匹配字符串的结尾位置
+^ ：匹配字符串的开始位置 (中括号内表示 取反)
+</code></pre><p>==&gt; 模式修正符 /str/模式修正符</p>
+<pre><code>i : 忽略大小写
+g : 多次(全局)匹配(全局匹配就没有体现模式单元了)
+m : 如果有\n换行，m也能进行多行匹配
+
+可以连续使用
+</code></pre><p>==&gt; 组合字符</p>
+<p>\d : 表示[0-9]  数字<br>\D : 表示[^0-9] 非数字<br>\m : 表示[a-zA-Z0-9_] 字母数值下划线<br>\M : 表示 非字母数值下划线<br>\s : 空格<br>\S : 非空格<br>\b : 单词边界<br>\B : 非单词边界</p>
+<p>==&gt; 限定字符</p>
+<pre><code>[ ] : 使里面的匹配成为一个单元(如果没有方括号的话每一个字符都是一个单元)
+{m} : 前面的单元能匹配m次才可以
+{m,} : 至少m次
+{m,n} : 至少m次,最多n次
+</code></pre><p>==&gt; () 模式单元</p>
+<pre><code>() : 标记一个字表达式的开始和结束,号称 模式单元
+      优先级高
+      括号里的字符是拆分出来的子字符串(匹配的返回值的数组中可以得到)  
+
+() 单元模式的从发使用
+
+var reg = /[0-9]+-[0-9]+ : [0-9]+-[0-9]+/   ===   /([0-9]+)-\1 : \1-\1/ 
+
+    1 代表子表达式在数组中的位置,如果有第二个字表达式就用 \2
+    但是\1表示的数据,的类型和数值大小都要一样
+
+    多个括号横向拍,有的又有嵌套括号，先从左向右,从外向内(直接打印成数组比较直观)
+</code></pre><p>==&gt; 正向预查</p>
+<p>– 正向匹配 (?=…模式(特殊格式指定信息)..)</p>
+<p>   我们要查找的内容右边必须出现模式中指定的信息要求,才符合条件。右边的辅助条件是不会出现在结果中的</p>
+<pre><code>var reg = /pattern(?=模式)/ 
+</code></pre><p>–正向不匹配 (?!…模式(特殊格式指定信息)…)</p>
+<p>   我们要查找的内容右边必须不能出现模式中指定的信息要求,才符合条件。</p>
+<p>==&gt; 反向预查 和正向预查一样,只是模式在左边,右边的内容必须符合左边的要求</p>
+<p>反向匹配 : var reg = /(?&lt;=模式)pattern/</p>
+<p>反向不匹配 : var reg = /(?&lt; !模式)pattern/   反向预查据说只有PHP支持</p>
+<h2 id="使用正则的方法"><a href="#使用正则的方法" class="headerlink" title="使用正则的方法"></a>使用正则的方法</h2><hr>
+<h3 id="正则方法"><a href="#正则方法" class="headerlink" title="正则方法"></a>正则方法</h3><p>   var reg = new RegExp(正则,”g”,…)</p>
+<p>   reg.test(str) //匹配 返回true 否则返回false<br>   reg.exec(str) //返回匹配的字符串 , 否则返回null<br>   reg.compile(正则2) //既可以改变检索模式，也可以添加或删除第二个参数。</p>
+<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><p>==&gt; str.strFn(正则)</p>
+<pre><code>str.match(/liao/) //返回第一个匹配到的字符串、匹配到的第一个字符的索引和str 
+
+str.replace(&quot;字符串||正则&quot;,&quot;替换内容&quot;)  //将str中第一个参数或匹配的正则位置,替换成后面的内容
+
+str.search(/reg/ || str) //返回匹配到的字符串的索引,没有就 -1
+
+str.split(/reg/ || str,number) //将字符串以指定的符号分隔为字符串数组
+
+                                 参数二限定取得的数组长度
+
+                                 正则的用法是以匹配到的内容为分割线
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/11/原生ajax/" rel="next" title="Ajax">
+                <i class="fa fa-chevron-left"></i> Ajax
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/14/JavaScript基础/" rel="prev" title="JavaScript基础">
+                JavaScript基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/head2.jpg" alt="勋戈">
+            
+              <p class="site-author-name" itemprop="name">勋戈</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourliaozhongxun" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://lzoxun.top" target="_blank" title="Lzo勋">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Lzo勋</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则字符集"><span class="nav-number">1.</span> <span class="nav-text">正则字符集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用正则的方法"><span class="nav-number">2.</span> <span class="nav-text">使用正则的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则方法"><span class="nav-number">2.1.</span> <span class="nav-text">正则方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串方法"><span class="nav-number">2.2.</span> <span class="nav-text">字符串方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">勋戈</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true}});</script></body>
+</html>

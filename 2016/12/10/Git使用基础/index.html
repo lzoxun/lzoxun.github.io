@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="版本控制,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
+<meta name="keywords" content="版本控制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git使用基础">
+<meta property="og:url" content="http://yoursite.com/2016/12/10/Git使用基础/index.html">
+<meta property="og:site_name" content="Lzo勋">
+<meta property="og:description" content="==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-28T15:58:15.139Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git使用基础">
+<meta name="twitter:description" content="==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/10/Git使用基础/">
+
+
+
+
+
+  <title>git使用基础 | Lzo勋</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+   <a href="https://www.lzoxun.top"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+      
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lzo勋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/10/Git使用基础/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="勋戈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lzo勋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git使用基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-10T11:52:04+08:00">
+                2016-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>==&gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help）</p>
+<p>==&gt; git init  //创建本地git仓库</p>
+<p>==&gt; git config -h //帮助</p>
+<p>==&gt; git config –list  //查看git所有配置</p>
+<pre><code>git 配置分为三部分
+
+    1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头
+
+       git config --local --list (只 本地配置)
+
+    2、全局配置位于用户的根目录下 .gitconfig  //需要进行过全局配置才会有该文件
+
+       git config --global --list (只 全局配置)
+
+    3、系统配置位于git的安装目录下
+
+       git config --system --list (只 系统配置)
+
+    (优先级依次降低 如果三个配置文件中都有同样的配置优先以本地为准)
+</code></pre><p>==&gt;  git config –[local/global/system] obj.键 + 空格 + 值 //修改、添加配置</p>
+<p>==&gt;  git config –[local/global/system] –unset obj.键  //删除配置</p>
+<p>==================git分区</p>
+<p>==&gt; 工作区 (.git 所在的工作目录)</p>
+<p>==&gt; 暂存区</p>
+<p>==&gt; 仓库 （.git 这个目录就是仓库）</p>
+<p>==&gt; git status 查看文件状态</p>
+<pre><code>刚新建的文件/修改 --&gt; 未跟踪的文件（红色不会被提交）
+
+git add 文件名/夹  --&gt; 成为跟踪文件 (绿色)
+git rm --cached 文件名 --&gt; 取消跟踪状态
+
+git commit -m &quot;提交说明&quot; || 
+
+git commit 回车(进入编辑器) --&gt; i(进入编辑模式) --&gt; esc (退出编辑模式) --&gt; :wq(保存并退出)
+
+链接 : git remote add origin  http.. || ssh
+
+推送 : git push -u origin master(分支)  (第二次就直接push就行了)
+</code></pre><p>==&gt; git pull 拉取远程仓库内容到本地(更新)</p>
+<p>==&gt; git branch 分支名 //新建分支</p>
+<pre><code>git branch 分支名 &apos;commit id&apos; //基于某一次提交的分支
+
+git branch  //查看分支 前面有 * 的就是当前指向的分支(head指向的分支)
+
+git branch -a //显示隐藏分支
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">如果你现快速的代上面的分支，你可以直接切换到那个分支：</span><br><span class="line"></span><br><span class="line">$ git checkout origin/experimental</span><br><span class="line"></span><br><span class="line">但是，如果你想在那个分支工作的话，你就需要创建一个本地分支：</span><br><span class="line"></span><br><span class="line">$ git checkout -b experimental origin/experimental</span><br><span class="line"></span><br><span class="line">现在，如果你看看你的本地分支，你会看到：</span><br><span class="line"></span><br><span class="line">$ git branch</span><br><span class="line">  master</span><br><span class="line">* experimental</span><br><span class="line"></span><br><span class="line">你还可以用git remote命令跟踪多个远程分支</span><br><span class="line"></span><br><span class="line">$ git remote add win32 git://gutup.com/users/joe/myproject-linux-port</span><br><span class="line">$ git branch -a</span><br><span class="line">* master</span><br><span class="line">  origin/HEAD</span><br><span class="line">  origin/master</span><br><span class="line">  origin/v1.0-stable</span><br><span class="line">  origin/experimental</span><br><span class="line">  linux/master</span><br><span class="line">  linux/new-widgets</span><br></pre></td></tr></table></figure>
+
+git branch -d 分支名 //删除分支
+           -D 强制删除没有合并的分支
+
+git checkout 分支名 //切换到该分支(会检出该分支最后一次提交的代码到工作区)
+
+git checkout -b 分支名 // -b表示创建并切换
+
+git branch -v  查看本地与远程分支的同步信息 -vv 更详细的信息
+
+拉取远程分支到本地: git checkout --track(跟踪关系) &quot;主机名(origin)/分支名&quot;
+                    如果远程直接新建的要先 git remote update 一下
+
+合并分支: git merge 分支名 //在某个分支上将指定分支拉取过来
+          如果有冲突，会自动建立一个临时分支 &lt;&lt;&lt;&lt;Head ... ==== ---- &gt;&gt;&gt;&gt;testing  改好提交就行行了
+
+git clone -b 分支名 仓库地址 //克隆仓库中指定分支内容
+git push --set-upstream origin 分支名  //提交到指定分支(当前所在的分支)
+
+重置暂存区: git reset 文件名/HEAD(所有)  (仅仅重置暂存区,返回add操作之前)
+
+            git reset --hard  //重置掉当前工作目录回到上一次提交danq
+
+            git reset --hard HEAD^ 回到上两次提交 以此类推
+
+            git reset --hard &quot;commit id&quot; 回到指定提交
+
+git reflog //记录每一次提交操作，包括重置掉的id
+</code></pre><p>==&gt; git clone http.. || ssh  克隆远程仓库</p>
+<p>==&gt; git checkout 检出文件(当一个文件改错了 想从历史中拿一个版本来替换是做的)</p>
+<pre><code>git checkout  通过commit id 指定哪个版本(没指定的话就用最近一次提交的版本) 文件名
+</code></pre><p>==&gt; git status //贮藏工作区(保存当前修改又不想提交的文件 之后)</p>
+<pre><code>git status show 查看贮藏内容
+
+git status pop 取出贮藏内容
+</code></pre><p>==&gt; 忽略文件 （成功之后查看状态时就不会显示它了）</p>
+<pre><code>1、工作区根目录下 创建文件 .gitignore 文件
+
+2、规定忽略规则(在文件里写入文件/文件夹名就好 可以是路径（更多...）)
+
+3、该文件可存在于个个目录
+</code></pre><p>==&gt; git log 查看日志</p>
+<p>   1、commit id  重要</p>
+<p>==================远程仓库</p>
+<p>==&gt; github</p>
+<p>==&gt; 开源中国</p>
+<pre><code>本地仓库与远程仓库名必须相同 
+</code></pre><p>==&gt; 生产本机的ssh  </p>
+<pre><code>1、git下输入  ssh-keygen  连续回车生成公私钥（公私钥与本台计算机有关）
+
+2、公私钥匙用户家目录下的 .ssh 文件夹中
+
+   私钥 : id_rsa 
+
+   公钥 : id_rsa.pub
+
+3、复制公钥的内容到远程仓库(GitHub 或 开源中国等）
+
+   添加成功后本台计算机就能和远程仓库进行交换了
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/版本控制/" rel="tag"># 版本控制</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/09/hexp-GitHub搭建博客/" rel="next" title="hexp+GitHub搭建博客">
+                <i class="fa fa-chevron-left"></i> hexp+GitHub搭建博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/10/Markdown/" rel="prev" title="Markdown">
+                Markdown <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/head2.jpg" alt="勋戈">
+            
+              <p class="site-author-name" itemprop="name">勋戈</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourliaozhongxun" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://lzoxun.top" target="_blank" title="Lzo勋">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Lzo勋</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">勋戈</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true}});</script></body>
+</html>

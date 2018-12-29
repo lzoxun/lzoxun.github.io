@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ECMAScript 6扩展部分变量123456789/* * 1、let *      特性没有与解析(不会有先申明后执行的过程)    *      不能重复申明 *      块级作用域( &amp;#123;&amp;#125;为一个代码块 ) * * 2、const  *      申明一个常量,不能被修改  但是对象中的值是可以改变的 */ 扩展运算符12var str = &quot;liao&quot;; //代表E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="潭州课程">
+<meta property="og:url" content="http://yoursite.com/2017/08/10/潭州课程/index.html">
+<meta property="og:site_name" content="Lzo勋">
+<meta property="og:description" content="ECMAScript 6扩展部分变量123456789/* * 1、let *      特性没有与解析(不会有先申明后执行的过程)    *      不能重复申明 *      块级作用域( &amp;#123;&amp;#125;为一个代码块 ) * * 2、const  *      申明一个常量,不能被修改  但是对象中的值是可以改变的 */ 扩展运算符12var str = &quot;liao&quot;; //代表E">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-28T13:12:43.502Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="潭州课程">
+<meta name="twitter:description" content="ECMAScript 6扩展部分变量123456789/* * 1、let *      特性没有与解析(不会有先申明后执行的过程)    *      不能重复申明 *      块级作用域( &amp;#123;&amp;#125;为一个代码块 ) * * 2、const  *      申明一个常量,不能被修改  但是对象中的值是可以改变的 */ 扩展运算符12var str = &quot;liao&quot;; //代表E">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/10/潭州课程/">
+
+
+
+
+
+  <title>潭州课程 | Lzo勋</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+   <a href="https://www.lzoxun.top"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+      
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lzo勋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/10/潭州课程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="勋戈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lzo勋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">潭州课程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-10T18:52:19+08:00">
+                2017-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="ECMAScript-6"><a href="#ECMAScript-6" class="headerlink" title="ECMAScript 6"></a>ECMAScript 6</h2><h3 id="扩展部分"><a href="#扩展部分" class="headerlink" title="扩展部分"></a>扩展部分</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1、let</span></span><br><span class="line"><span class="comment"> *      特性没有与解析(不会有先申明后执行的过程)   </span></span><br><span class="line"><span class="comment"> *      不能重复申明</span></span><br><span class="line"><span class="comment"> *      块级作用域( &#123;&#125;为一个代码块 )</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 2、const </span></span><br><span class="line"><span class="comment"> *      申明一个常量,不能被修改  但是对象中的值是可以改变的</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"liao"</span>; <span class="comment">//代表ES6中所有有遍历接口的数组或类数组 </span></span><br><span class="line"><span class="keyword">var</span> arr = [...str] <span class="comment">// arr = ["l","i","a","o"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="结构赋值"><a href="#结构赋值" class="headerlink" title="结构赋值"></a>结构赋值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1、数组结构赋值</span></span><br><span class="line"><span class="comment"> *      let [a,b,[c]] = [1,2,[3,5]]</span></span><br><span class="line"><span class="comment"> *      //a ==1  b ==2 c==3</span></span><br><span class="line"><span class="comment"> *      </span></span><br><span class="line"><span class="comment"> *      let [a,b,c] = [1,2,[3,5]]</span></span><br><span class="line"><span class="comment"> *      //a ==1  b ==2 c==[3,5]</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 2、对象的节后赋值</span></span><br><span class="line"><span class="comment"> *      let obj = &#123;arr:[],str:''&#125;;</span></span><br><span class="line"><span class="comment"> *      let &#123;arr,str&#125; = obj;</span></span><br><span class="line"><span class="comment"> *      //arr==[]  srt=='',对象的结构赋值键名要对的上</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1、字符串拼接</span></span><br><span class="line"><span class="comment"> *     `字符串夹$&#123;bian量&#125;`</span></span><br><span class="line"><span class="comment"> *     $&#123;&#125; 中可以直接运算</span></span><br><span class="line"><span class="comment"> *         可直接换行</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 2、字符串查找</span></span><br><span class="line"><span class="comment"> *      str.includes("char") 如果找到返回true</span></span><br><span class="line"><span class="comment"> *      str.startsWith("char") 如果知道字符在头部返回true</span></span><br><span class="line"><span class="comment"> *      str.endsWith("char") 如果知道字符在尾部返回true</span></span><br><span class="line"><span class="comment"> *      第二个参数从第几位开始找</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *      str.repeat(n) 复制字符串n遍</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h4 id="正则扩展"><a href="#正则扩展" class="headerlink" title="正则扩展"></a>正则扩展</h4><h4 id="数值扩展"><a href="#数值扩展" class="headerlink" title="数值扩展"></a>数值扩展</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1、去除小数点(取整)</span></span><br><span class="line"><span class="comment"> *    Math.trunc(num)</span></span><br><span class="line"><span class="comment"> *    </span></span><br><span class="line"><span class="comment"> * 2、区分正负</span></span><br><span class="line"><span class="comment"> *    Math.sing(5) 1</span></span><br><span class="line"><span class="comment"> *    Math.sing(0) 0 </span></span><br><span class="line"><span class="comment"> *    Math.sing(-5) -1</span></span><br><span class="line"><span class="comment"> *    Math.sing(-0) -0</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 3、平方和的平方根</span></span><br><span class="line"><span class="comment"> *    Math.hypot(2,3)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h4 id="数组扩展"><a href="#数组扩展" class="headerlink" title="数组扩展"></a>数组扩展</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1、类数组转数组(如字符串)</span></span><br><span class="line"><span class="comment"> *    Array.from(leiarr)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 2、接收一组参数，转为数组</span></span><br><span class="line"><span class="comment"> *    Array.of(1,2,3,4)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 3、找到数组中符合条件的一个值</span></span><br><span class="line"><span class="comment"> *    arr.find(function(value,key)&#123;</span></span><br><span class="line"><span class="comment"> *        return value &gt;3</span></span><br><span class="line"><span class="comment"> *    &#125;)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 4、找到数组中符合条件的一个值的索引</span></span><br><span class="line"><span class="comment"> *    arr.findIndex(function(value,key)&#123;</span></span><br><span class="line"><span class="comment"> *        return value &gt;3</span></span><br><span class="line"><span class="comment"> *    &#125;)</span></span><br><span class="line"><span class="comment"> * 5、数组填充</span></span><br><span class="line"><span class="comment"> *    arr.fill('ele',startIndex,endIndex) 包前不包后</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 6、数组推到</span></span><br><span class="line"><span class="comment"> *	  var arr = [1,2,3,4,5]</span></span><br><span class="line"><span class="comment"> *	  var arr2 = [for(value of arr) value*2] //arr2 = 2 4 7 8 10 </span></span><br><span class="line"><span class="comment"> *	  var arr2 = [for(value of arr) 可以加判断 value*2] //arr2 = 2 4 7 8 10 </span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h4 id="循环扩展"><a href="#循环扩展" class="headerlink" title="循环扩展"></a>循环扩展</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *  1、for of 循环</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> value <span class="keyword">of</span> obj)&#123;&#125; <span class="comment">//只能遍历有遍历接口的对象  //Object.values(obj)</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">of</span> arr.keys())&#123;&#125; <span class="comment">//遍历数组的key</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> value <span class="keyword">of</span> arr.values())&#123;&#125; <span class="comment">//遍历数组的value (默认)</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> [key,value] <span class="keyword">of</span> arr.entries())&#123;&#125; <span class="comment">//遍历数组的key end value</span></span><br></pre></td></tr></table></figure>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><h5 id="Proxy-代理对象"><a href="#Proxy-代理对象" class="headerlink" title="Proxy 代理对象"></a>Proxy 代理对象</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pro = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj,&#123; <span class="comment">//obj就是要代理的对象,参数二就是对代理对象的处理</span></span><br><span class="line">    set(obj,attr,value)&#123; <span class="comment">//对代理对象的设置就会先触发set方法</span></span><br><span class="line">        obj[attr] = value;</span><br><span class="line">    &#125;,</span><br><span class="line">    get(obj,attr)&#123; <span class="comment">//对代理对象的访问就会先触发get方法</span></span><br><span class="line">        <span class="keyword">return</span> 出去的值,就是你访问obj对象的attr属性所得到的值</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(pro.a)  <span class="comment">//得到return出来的值</span></span><br></pre></td></tr></table></figure>
+<h5 id="对象定义"><a href="#对象定义" class="headerlink" title="对象定义"></a>对象定义</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * var obj = &#123;</span></span><br><span class="line"><span class="comment"> *     fn()&#123;&#125;,</span></span><br><span class="line"><span class="comment"> *      ["a" + 'b']:"123"</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 简写</span></span><br><span class="line"><span class="comment"> *   ES5 : return &#123;x:x,y:y&#125;</span></span><br><span class="line"><span class="comment"> *   ES6 : return &#123;x,y&#125; </span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h5 id="对象新增方法"><a href="#对象新增方法" class="headerlink" title="对象新增方法"></a>对象新增方法</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1、判断参数是否相等</span></span><br><span class="line"><span class="comment"> *    Object.is(0,-0) false  </span></span><br><span class="line"><span class="comment"> *    0 === -0 true  </span></span><br><span class="line"><span class="comment"> *    Object.is(NAN,NAN) true  </span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 2、多个obj赋值到一个里去</span></span><br><span class="line"><span class="comment"> *    Object.assign(obj,obj1,objn); 从后往前依次覆盖;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 3、获取对象的 prototype</span></span><br><span class="line"><span class="comment"> *    Object.getPrototypeOf(new Array());</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 4、改变对象的 prototype</span></span><br><span class="line"><span class="comment"> *    Object.setPrototypeOf(new Dog(),Cat.prototype); //将猫类的prototype覆盖到狗上 </span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><h5 id="传参、默认值"><a href="#传参、默认值" class="headerlink" title="传参、默认值"></a>传参、默认值</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a,b,...c</span>)</span>&#123; <span class="comment">// ...c必须放在最后</span></span><br><span class="line">	<span class="built_in">console</span>.log(c) <span class="comment">//[3,4,5,6]</span></span><br><span class="line">	<span class="built_in">console</span>.log(...c) <span class="comment">// 3 4 5 6</span></span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a,b = <span class="number">2</span></span>)</span>&#123; <span class="comment">// b = 2必须放在最后</span></span><br><span class="line">	<span class="built_in">console</span>.log(a) </span><br><span class="line">	<span class="built_in">console</span>.log(b) <span class="comment">// 2</span></span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fn = <span class="function">(<span class="params">a,b</span>) =&gt;</span> &#123;</span><br><span class="line">    alert(<span class="string">"a"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果只有执行一行代码</span></span><br><span class="line"><span class="keyword">let</span> fn = <span class="function"><span class="params">()</span> =&gt;</span> alert(<span class="string">"a"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果只有一个参数,可省略小括号</span></span><br><span class="line"><span class="keyword">let</span> fn = <span class="function"><span class="params">a</span> =&gt;</span> alert(<span class="string">"a"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>与真正函数的区别</strong><br>1、箭头函数不能 new<br>2、箭头函数不存在 arquments<br>3、this指向永远指向定义时所在的对象 ????</p>
+<h3 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h3><h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><h5 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * let set = new Set([1,1,1,"1",2]); // let = [1,"1",2]</span></span><br><span class="line"><span class="comment"> * 1、set所有的值都是唯一的</span></span><br><span class="line"><span class="comment"> * 2、set.size   相当于 arr.length</span></span><br><span class="line"><span class="comment"> * 3、set.add(ele)  追加</span></span><br><span class="line"><span class="comment"> * 4、set.delect(ele) 删除</span></span><br><span class="line"><span class="comment"> * 5、set.has(6) //判断set中是否有6这个元素 返回一个bool值</span></span><br><span class="line"><span class="comment"> * 6、set.clear() //清空set中多有成员</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h5 id="Weakset"><a href="#Weakset" class="headerlink" title="Weakset"></a>Weakset</h5><h5 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * var map = new Map([[]]) //参数解构 [[key,value],[key,value]]  不会出现从复的key,这里的key值可以是对象、一个函数</span></span><br><span class="line"><span class="comment"> * 1、map.size  //成员数量</span></span><br><span class="line"><span class="comment"> * 2、map.set("key","value") //新增值</span></span><br><span class="line"><span class="comment"> * 3、map.get("key") //获取</span></span><br><span class="line"><span class="comment"> * 4、map.has("key") //判断key是否存在</span></span><br><span class="line"><span class="comment"> * 5、map.delete("key") //删除key</span></span><br><span class="line"><span class="comment"> * 6、map.clear() //清空所有</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h5 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pro = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">       <span class="comment">//经过很多操作之后</span></span><br><span class="line">       <span class="comment">//resolve() 代表成功状态,reject() 代表失败 ,可以传参</span></span><br><span class="line">       resolve();</span><br><span class="line">&#125;)</span><br><span class="line">&lt;!-- 直接.them --&gt;</span><br><span class="line">&lt;!-- .them(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	 <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(....) <span class="comment">//上一个执行完之后接着走这里</span></span><br><span class="line">&#125;) --&gt;</span><br><span class="line"></span><br><span class="line">pro.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"成功"</span>)</span><br><span class="line">   <span class="comment">//当上面执行 resolve() 的时候走这里</span></span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"失败"</span>)</span><br><span class="line">   <span class="comment">//当上面执行 reject() 的时候走这里</span></span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//报错时走这里</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> pro3 = Promist.all([pro1,pro2]);</span><br><span class="line">pro3.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//pro1 和 pro2 都成功(调用resolve())之后 </span></span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//pro1 和 pro2 只要有一个失败(调用reject())就马上走这里</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> pro3 = Promist.race([pro1,pro2]);</span><br><span class="line">pro3.then() </span><br><span class="line"></span><br><span class="line"><span class="comment">//race函数的参数中 只要有一个的状态(变成调用resolve()) 改变,就走成功</span></span><br></pre></td></tr></table></figure>
+<h5 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;  </span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>; <span class="comment">//return代表函数结束了</span></span><br><span class="line">  <span class="comment">//每次调用next方法，内部指针就从函数头部或上一次停下来的地方开始执行，直到遇到下一个yield语句（或return语句）为止。换言之，Generator函数是分段执行的，yield语句是暂停执行的标记，而next方法可以恢复执行。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hw = helloWorldGenerator(); <span class="comment">//确保同一个对象</span></span><br><span class="line"></span><br><span class="line">hw.next() </span><br><span class="line"><span class="comment">// &#123; value: 'hello', done: false &#125;</span></span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line"><span class="comment">// &#123; value: 'world', done: false &#125;</span></span><br><span class="line"><span class="comment">// next 传的参数通过上一次yield 的返回结果得到</span></span><br><span class="line"></span><br><span class="line">hw.next() <span class="comment">//遇到return时 done为true</span></span><br><span class="line"><span class="comment">// &#123; value: 'ending', done: true &#125;</span></span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line"><span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
+<h5 id="async"><a href="#async" class="headerlink" title="async"></a>async</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1、在函数前加 async关键字</span></span><br><span class="line"><span class="comment"> *    async function fn()&#123; await p1(); &#125;</span></span><br><span class="line"><span class="comment"> * 2、 函数内部遇到 await 关键字时停止运行 ,并返回后面 Promise对象成功或失败传入的参数</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 3、await 后边必须跟 Promise对象,当对象执行成功状态函数是往下执行</span></span><br><span class="line"><span class="comment"> * 4、fn的return 就是 fn().them((data) =&gt;&#123;&#125;) 的data</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h5 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name)&#123; <span class="comment">//这个类的构造函数</span></span><br><span class="line">        <span class="keyword">this</span>.name = name; </span><br><span class="line">    &#125;</span><br><span class="line">    getName()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> getColor(color)&#123; <span class="comment">//静态方法 直接Cat.getColor()调用</span></span><br><span class="line">        <span class="built_in">console</span>.log(color)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat2</span> <span class="keyword">extends</span> <span class="title">Cat</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name,color)&#123; </span><br><span class="line">        <span class="keyword">super</span>(name) </span><br><span class="line">        <span class="comment">//在 constructor 内,super指代父类的contructor,</span></span><br><span class="line">        <span class="comment">//在 其他方法内,super指定父类的同名方法</span></span><br><span class="line">        <span class="keyword">this</span>.color = color; </span><br><span class="line">    &#125;</span><br><span class="line">    getfafn()&#123; <span class="comment">//调用父级的方法</span></span><br><span class="line">        <span class="keyword">super</span>.getName()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">//已经继承了 并且有自己的color属性</span></span><br></pre></td></tr></table></figure>
+<h2 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h2><h3 id="nodejs是什么"><a href="#nodejs是什么" class="headerlink" title="nodejs是什么"></a>nodejs是什么</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 </span><br><span class="line">Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型(异步运行)，使其轻量又高效。 </span><br><span class="line">Node.js 的包管理器 npm，是全球最大的开源库生态系统。</span><br></pre></td></tr></table></figure>
+<h3 id="nodejs-与-javascript"><a href="#nodejs-与-javascript" class="headerlink" title="nodejs 与 javascript"></a>nodejs 与 javascript</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">nodejs</th>
+<th style="text-align:center">javascript</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">全局</td>
+<td style="text-align:center">global</td>
+<td style="text-align:center">window</td>
+</tr>
+</tbody>
+</table>
+<p>nodejs不包含浏览器的相关操作</p>
+<h3 id="nodejs-常用的全局对象"><a href="#nodejs-常用的全局对象" class="headerlink" title="nodejs 常用的全局对象"></a>nodejs 常用的全局对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当前文件路径</span></span><br><span class="line"><span class="built_in">console</span>.log(__filename);</span><br><span class="line"></span><br><span class="line"><span class="comment">//当前文件文件夹</span></span><br><span class="line"><span class="built_in">console</span>.log(__dirname);</span><br><span class="line"></span><br><span class="line"><span class="comment">//process对象 获取node工作目录(根目录)</span></span><br><span class="line"><span class="built_in">console</span>.log(process.cwd());</span><br></pre></td></tr></table></figure>
+<h3 id="模块-一个文件就是一个模块"><a href="#模块-一个文件就是一个模块" class="headerlink" title="模块(一个文件就是一个模块)"></a>模块(一个文件就是一个模块)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入</span></span><br><span class="line">   <span class="built_in">require</span>(<span class="string">'./1.js'</span>); <span class="comment">//后缀可以省略 ./代表当前目录</span></span><br><span class="line">   <span class="built_in">require</span>(<span class="string">'http'</span>); <span class="comment">//安装好node就带有的模块 叫核心模块,直接写模块名</span></span><br><span class="line">                    <span class="comment">//node_modules下的模块也是直接写名字</span></span><br><span class="line">             </span><br><span class="line"><span class="comment">//模块的加载顺序: 文件夹名 &gt; 文件名.js &gt; 文件名.json &gt; 文件名.node</span></span><br><span class="line"><span class="comment">//模块直接互相使用:</span></span><br><span class="line">  <span class="built_in">module</span>.exports = a; <span class="comment">//将对象a暴露出模块,给其他require的文件使用</span></span><br></pre></td></tr></table></figure>
+<h3 id="node底层服务器"><a href="#node底层服务器" class="headerlink" title="node底层服务器"></a>node底层服务器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入http模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>( <span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function">(<span class="params">request,response</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//request 请求对象 浏览器请求服务器发送的内容</span></span><br><span class="line">    <span class="comment">//response 相应对象 服务器返回给浏览器的内容</span></span><br><span class="line">    response.writeHead(<span class="number">200</span>,&#123; <span class="string">'Content-Type'</span>:<span class="string">'text/html'</span>&#125;);</span><br><span class="line">    response.end(<span class="string">'Hello word'</span>); <span class="comment">//结束相应</span></span><br><span class="line">&#125;).listen(<span class="number">8088</span>);</span><br><span class="line"><span class="comment">// 运行该模块 访问 localhost:8088   就能显示响应的内容了</span></span><br><span class="line"><span class="comment">// 后面如果有修改代码，要重启服务器代码才会生效</span></span><br></pre></td></tr></table></figure>
+<h3 id="node工程配置目录"><a href="#node工程配置目录" class="headerlink" title="node工程配置目录"></a>node工程配置目录</h3><p>1、配置文件: package.json<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'name':'项目名称',</span><br><span class="line">    'version':'1.0.0', </span><br><span class="line">    'dependencies':&#123;       //依赖包</span><br><span class="line">        'express':'latest' //版本号，latest代表最新版本</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、router目录 存放路由文件<br>3、views目录 存放模板文件<br>4、module目录 存放自己写的模块</p>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><h3 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h3><h4 id="ejs"><a href="#ejs" class="headerlink" title="ejs"></a>ejs</h4><p>1、设置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">express = <span class="built_in">require</span>(<span class="string">'express'</span>),</span><br><span class="line">app = express();<span class="comment">//初始化express express是封装过的服务器</span></span><br><span class="line"><span class="comment">//设置模板引擎目录</span></span><br><span class="line">app.set(<span class="string">'views'</span>,__dirname + <span class="string">'/views'</span>);</span><br><span class="line"><span class="comment">//设置使用的模板引擎是什么</span></span><br><span class="line">app.set(<span class="string">'view engine'</span>,<span class="string">'ejs'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>2、调用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//响应模板引擎</span></span><br><span class="line">router.get(<span class="string">'/ejs'</span>,(req,res) =&gt; &#123;</span><br><span class="line">    <span class="comment">//因为设置了模板引擎目录，所以这边直接写文件名</span></span><br><span class="line">    <span class="comment">//因为设置了模板引擎目录格式，所以这边能省略扩展名</span></span><br><span class="line">    <span class="comment">//json传递数据</span></span><br><span class="line">    <span class="comment">//如果值是字符串  ejs文件中接收 &lt;%= name %&gt;</span></span><br><span class="line">    <span class="comment">//如果值是html标签并需要解析  ejs文件中接收 &lt;%- name %&gt;</span></span><br><span class="line">    res.render(<span class="string">'index'</span>,&#123;<span class="string">"name"</span>:<span class="string">"lzoxun"</span>&#125;); <span class="comment">//value也可以是json</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>3、ejs语法<br><strong>&lt;% %&gt; 形式写js代码</strong><br><strong>&lt;%=或- %&gt; 接收传递的值</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入其他模板</span></span><br><span class="line">&lt;% include header.ejs %&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//接收模板传递的数据</span></span><br><span class="line">&lt;%= name %&gt;</span><br><span class="line">&lt;%- name %&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//编写js代码</span></span><br><span class="line">&lt;% <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123; %&gt;</span><br><span class="line">      循环中</span><br><span class="line"> &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h3><p>1、设置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置静态资源目录 js img css</span></span><br><span class="line"><span class="comment">//app.use('/dir',express.static(__dirname + '/public')) //这个目录下的dir 就是静态资源引用时的根目录</span></span><br><span class="line">app.use(express.static(__dirname + <span class="string">'/public'</span>)) <span class="comment">//这个目录就是静态资源引用时的根目录</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="mySql数据库"><a href="#mySql数据库" class="headerlink" title="mySql数据库"></a>mySql数据库</h3><h4 id="本地换xampp"><a href="#本地换xampp" class="headerlink" title="本地换xampp"></a>本地换xampp</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/10/其他运用/" rel="next" title="其他运用">
+                <i class="fa fa-chevron-left"></i> 其他运用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/12/布局/" rel="prev" title="布局">
+                布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/head2.jpg" alt="勋戈">
+            
+              <p class="site-author-name" itemprop="name">勋戈</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourliaozhongxun" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://lzoxun.top" target="_blank" title="Lzo勋">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Lzo勋</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript-6"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript 6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展部分"><span class="nav-number">1.1.</span> <span class="nav-text">扩展部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">1.1.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展运算符"><span class="nav-number">1.1.2.</span> <span class="nav-text">扩展运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结构赋值"><span class="nav-number">1.1.3.</span> <span class="nav-text">结构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">1.1.4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则扩展"><span class="nav-number">1.1.5.</span> <span class="nav-text">正则扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值扩展"><span class="nav-number">1.1.6.</span> <span class="nav-text">数值扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组扩展"><span class="nav-number">1.1.7.</span> <span class="nav-text">数组扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环扩展"><span class="nav-number">1.1.8.</span> <span class="nav-text">循环扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">1.1.9.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Proxy-代理对象"><span class="nav-number">1.1.9.1.</span> <span class="nav-text">Proxy 代理对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象定义"><span class="nav-number">1.1.9.2.</span> <span class="nav-text">对象定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象新增方法"><span class="nav-number">1.1.9.3.</span> <span class="nav-text">对象新增方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">1.1.10.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#传参、默认值"><span class="nav-number">1.1.10.1.</span> <span class="nav-text">传参、默认值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.1.10.2.</span> <span class="nav-text">箭头函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增"><span class="nav-number">1.2.</span> <span class="nav-text">新增</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据结构"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Set"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Weakset"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Weakset</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Generator"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">Generator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#async"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">async</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Class"><span class="nav-number">1.2.1.7.</span> <span class="nav-text">Class</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs"><span class="nav-number">2.</span> <span class="nav-text">nodejs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nodejs是什么"><span class="nav-number">2.1.</span> <span class="nav-text">nodejs是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nodejs-与-javascript"><span class="nav-number">2.2.</span> <span class="nav-text">nodejs 与 javascript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nodejs-常用的全局对象"><span class="nav-number">2.3.</span> <span class="nav-text">nodejs 常用的全局对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块-一个文件就是一个模块"><span class="nav-number">2.4.</span> <span class="nav-text">模块(一个文件就是一个模块)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node底层服务器"><span class="nav-number">2.5.</span> <span class="nav-text">node底层服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node工程配置目录"><span class="nav-number">2.6.</span> <span class="nav-text">node工程配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由"><span class="nav-number">2.7.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板引擎"><span class="nav-number">2.8.</span> <span class="nav-text">模板引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ejs"><span class="nav-number">2.8.1.</span> <span class="nav-text">ejs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态资源"><span class="nav-number">2.9.</span> <span class="nav-text">静态资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mySql数据库"><span class="nav-number">2.10.</span> <span class="nav-text">mySql数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地换xampp"><span class="nav-number">2.10.1.</span> <span class="nav-text">本地换xampp</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">勋戈</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true}});</script></body>
+</html>
