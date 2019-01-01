@@ -88,7 +88,7 @@
 <meta property="og:description" content="npm 插件移动端真机调试spy-debugger1、安装github入口1npm install spy-debugger -g 2、命令行输入 spy-debugger3、手机与电脑连接同一个局域网，根据提示 找到手机的WiFi长按 -&amp;gt; 修改网络 -&amp;gt; 显示高级 -&amp;gt; 代理 -&amp;gt;手动，4、对应主机名与端口 保存5、在生成的网址中调试手机访问的页面 css相关表格行列拖">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/spy-debugger.jpg">
-<meta property="og:updated_time" content="2018-12-29T04:38:13.688Z">
+<meta property="og:updated_time" content="2018-12-31T03:08:24.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="插件">
 <meta name="twitter:description" content="npm 插件移动端真机调试spy-debugger1、安装github入口1npm install spy-debugger -g 2、命令行输入 spy-debugger3、手机与电脑连接同一个局域网，根据提示 找到手机的WiFi长按 -&amp;gt; 修改网络 -&amp;gt; 显示高级 -&amp;gt; 代理 -&amp;gt;手动，4、对应主机名与端口 保存5、在生成的网址中调试手机访问的页面 css相关表格行列拖">
@@ -340,7 +340,17 @@
 <h3 id="css相关"><a href="#css相关" class="headerlink" title="css相关"></a>css相关</h3><h4 id="表格行列拖拽"><a href="#表格行列拖拽" class="headerlink" title="表格行列拖拽"></a>表格行列拖拽</h4><blockquote>
 <p>下载安装<a href="https://github.com/sindu12jun/table-dragger" target="_blank" rel="noopener">github入口</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install table-dragger --save</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<hr>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="打印插件"><a href="#打印插件" class="headerlink" title="打印插件"></a>打印插件</h4><blockquote>
+<p>下载安装<a href="https://github.com/Power-kxLee/vue-print-nb" target="_blank" rel="noopener">github入口</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-print-nb --save</span><br><span class="line"></span><br><span class="line">import Print from &apos;vue-print-nb&apos;</span><br><span class="line">Vue.use(Print);  //注册</span><br><span class="line"></span><br><span class="line">&lt;button v-print=&quot;&apos;#printTest&apos;&quot;&gt;打印&lt;/button&gt; //要打印的盒子id</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>方法2 下载直接引入<a href="https://github.com/xyl66/vuePlugs_printjs" target="_blank" rel="noopener">github入口</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import Print from &apos;@/plugs/print&apos;</span><br><span class="line">Vue.use(Print) // 注册</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;section ref=&quot;print&quot;&gt;</span><br><span class="line">	打印内容</span><br><span class="line">	&lt;div class=&quot;no-print&quot;&gt;不要打印我&lt;/div&gt;</span><br><span class="line">&lt;/section&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">this.$print(this.$refs.print) // 使用</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="js操作文件-FileSaver"><a href="#js操作文件-FileSaver" class="headerlink" title="js操作文件 FileSaver"></a>js操作文件 FileSaver</h4><blockquote>
+<p>下载安装<a href="https://github.com/eligrey/FileSaver.js" target="_blank" rel="noopener">github入口</a></p>
+</blockquote>
+<pre><code>npm install file-saver --save
+</code></pre><hr>
 <h2 id="谷歌插件"><a href="#谷歌插件" class="headerlink" title="谷歌插件"></a>谷歌插件</h2><h3 id="Tampermonkey"><a href="#Tampermonkey" class="headerlink" title="Tampermonkey"></a>Tampermonkey</h3><p>油猴脚本管理器浏览器插件 <a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">脚本下载网</a></p>
 <hr>
 <h2 id="sublime-插件"><a href="#sublime-插件" class="headerlink" title="sublime 插件"></a>sublime 插件</h2>
@@ -382,6 +392,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/30/web前端存储/" rel="prev" title="web前端存储">
+                web前端存储 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -460,7 +474,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -522,7 +536,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-插件"><span class="nav-number">1.</span> <span class="nav-text">npm 插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端真机调试"><span class="nav-number">1.1.</span> <span class="nav-text">移动端真机调试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#spy-debugger"><span class="nav-number">1.1.1.</span> <span class="nav-text">spy-debugger</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css相关"><span class="nav-number">1.2.</span> <span class="nav-text">css相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#表格行列拖拽"><span class="nav-number">1.2.1.</span> <span class="nav-text">表格行列拖拽</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌插件"><span class="nav-number">2.</span> <span class="nav-text">谷歌插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tampermonkey"><span class="nav-number">2.1.</span> <span class="nav-text">Tampermonkey</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sublime-插件"><span class="nav-number">3.</span> <span class="nav-text">sublime 插件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-插件"><span class="nav-number">1.</span> <span class="nav-text">npm 插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端真机调试"><span class="nav-number">1.1.</span> <span class="nav-text">移动端真机调试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#spy-debugger"><span class="nav-number">1.1.1.</span> <span class="nav-text">spy-debugger</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css相关"><span class="nav-number">1.2.</span> <span class="nav-text">css相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#表格行列拖拽"><span class="nav-number">1.2.1.</span> <span class="nav-text">表格行列拖拽</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打印插件"><span class="nav-number">1.3.1.</span> <span class="nav-text">打印插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js操作文件-FileSaver"><span class="nav-number">1.3.2.</span> <span class="nav-text">js操作文件 FileSaver</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌插件"><span class="nav-number">2.</span> <span class="nav-text">谷歌插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tampermonkey"><span class="nav-number">2.1.</span> <span class="nav-text">Tampermonkey</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sublime-插件"><span class="nav-number">3.</span> <span class="nav-text">sublime 插件</span></a></li></ol></div>
             
 
           </div>
@@ -542,7 +556,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
