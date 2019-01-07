@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="GIT基础==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
+<meta name="description" content="GIT基础git基本配置 git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） git init  //创建本地git仓库 git config -h //帮助 git config –list  //查看git所有配置 git help config //网页显示打开帮助手册   git 配置分为三部分 1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以">
 <meta name="keywords" content="版本控制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git使用基础">
 <meta property="og:url" content="http://yoursite.com/2016/12/10/Git使用基础/index.html">
 <meta property="og:site_name" content="Lzo勋">
-<meta property="og:description" content="GIT基础==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
+<meta property="og:description" content="GIT基础git基本配置 git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） git init  //创建本地git仓库 git config -h //帮助 git config –list  //查看git所有配置 git help config //网页显示打开帮助手册   git 配置分为三部分 1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-29T05:49:53.506Z">
+<meta property="og:updated_time" content="2019-01-07T08:52:42.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用基础">
-<meta name="twitter:description" content="GIT基础==&amp;gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） ==&amp;gt; git init  //创建本地git仓库 ==&amp;gt; git config -h //帮助 ==&amp;gt; git config –list  //查看git所有配置 git 配置分为三部分      1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头">
+<meta name="twitter:description" content="GIT基础git基本配置 git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） git init  //创建本地git仓库 git config -h //帮助 git config –list  //查看git所有配置 git help config //网页显示打开帮助手册   git 配置分为三部分 1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以">
 
 
 
@@ -333,95 +333,84 @@
       
 
       
-        <h2 id="GIT基础"><a href="#GIT基础" class="headerlink" title="GIT基础"></a>GIT基础</h2><p>==&gt; git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help）</p>
-<p>==&gt; git init  //创建本地git仓库</p>
-<p>==&gt; git config -h //帮助</p>
-<p>==&gt; git config –list  //查看git所有配置</p>
-<pre><code>git 配置分为三部分
+        <h2 id="GIT基础"><a href="#GIT基础" class="headerlink" title="GIT基础"></a>GIT基础</h2><h3 id="git基本配置"><a href="#git基本配置" class="headerlink" title="git基本配置"></a>git基本配置</h3><ul>
+<li>git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help）</li>
+<li>git init  //创建本地git仓库</li>
+<li>git config -h //帮助</li>
+<li>git config –list  //查看git所有配置</li>
+<li><p>git help config //网页显示打开帮助手册</p>
+<p>  git 配置分为三部分</p>
+<pre><code>1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头
 
-    1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以core开头
+   git config --local --list (只 本地配置)
 
-       git config --local --list (只 本地配置)
+2、全局配置位于用户的根目录下 .gitconfig  //需要进行过全局配置才会有该文件
 
-    2、全局配置位于用户的根目录下 .gitconfig  //需要进行过全局配置才会有该文件
+   git config --global --list (只 全局配置)
 
-       git config --global --list (只 全局配置)
+3、系统配置位于git的安装目录下
 
-    3、系统配置位于git的安装目录下
+   git config --system --list (只 系统配置)
 
-       git config --system --list (只 系统配置)
+(优先级依次降低 如果三个配置文件中都有同样的配置优先以本地为准)
+</code></pre></li>
+<li><p>git config –[local/global/system] obj.键 + 空格 + 值 //修改、添加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;liaozhongxun&quot;</span><br><span class="line">$ git config --global user.email 869664233@qq.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git config –[local/global/system] –unset obj.键  //删除配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global --unset user.name </span><br><span class="line">$ git config --global --unset user.email</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="git分区"><a href="#git分区" class="headerlink" title="git分区"></a>git分区</h3><ul>
+<li><p>git三种状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">已修改（modified)  $git add 之前 </span><br><span class="line">已暂存（staged）   $git add 之后</span><br><span class="line">已提交（committed) $git commit 之后</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>工作区 (.git 所在的工作目录)</p>
+</li>
+<li>暂存区</li>
+<li>仓库(.git 这个目录就是仓库）<blockquote>
+<p>提交流程<br>git status 查看文件状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br><span class="line"></span><br><span class="line">当前处于master分支,并且没有修改过的新文件,而且工作目录很干净</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>刚新建的文件/修改 –&gt; 未跟踪的文件（红色不会被提交）<br>    git add 文件名/夹  –&gt; 成为跟踪文件 (绿色)<br>    git diff  //对比的是尚未暂存的内容（add后就不贵它管了）<br>    git diff –cached //查看已经暂存起的变化<br>    git rm –cached 文件名 –&gt; 取消跟踪状态<br>    git mv oldname newname //改名<br>    git commit -m “提交说明” ||<br>    git commit 回车(进入编辑器) –&gt; i(进入编辑模式) –&gt; esc (退出编辑模式) –&gt; :wq(保存并退出)<br>    git commit -a -m (跳过add,只要一起add过后面修改加上-a就不需要重复add了)<br>    链接 : git remote add origin  http.. || ssh<br>    推送 : git push -u origin master(分支)  (第二次就直接push就行了)</p>
+<ul>
+<li>git pull 拉取远程仓库内容到本地(更新)</li>
+<li><p>git branch 分支名 //新建分支<br>  git branch 分支名 ‘commit id’ //基于某一次提交的分支<br>  git branch  //查看分支 前面有 * 的就是当前指向的分支(head指向的分支)<br>  git branch -a //显示隐藏分支</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">如果你现快速的代上面的分支，你可以直接切换到那个分支：</span><br><span class="line">$ git checkout origin/experimental</span><br><span class="line">但是，如果你想在那个分支工作的话，你就需要创建一个本地分支：</span><br><span class="line">$ git checkout -b experimental origin/experimental</span><br><span class="line">现在，如果你看看你的本地分支，你会看到：</span><br><span class="line">$ git branch</span><br><span class="line">  master</span><br><span class="line">* experimental</span><br><span class="line">你还可以用git remote命令跟踪多个远程分支</span><br><span class="line">$ git remote add win32 git://gutup.com/users/joe/myproject-linux-port</span><br><span class="line">$ git branch -a</span><br><span class="line">* master</span><br><span class="line">  origin/HEAD</span><br><span class="line">  origin/master</span><br><span class="line">  origin/v1.0-stable</span><br><span class="line">  origin/experimental</span><br><span class="line">  linux/master</span><br><span class="line">  linux/new-widgets</span><br></pre></td></tr></table></figure>
+<p>  git branch -d 分支名 //删除分支</p>
+<pre><code>-D 强制删除没有合并的分支
+</code></pre><p>  git checkout 分支名 //切换到该分支(会检出该分支最后一次提交的代码到工作区)<br>  git checkout -b 分支名 // -b表示创建并切换<br>  git branch -v  查看本地与远程分支的同步信息 -vv 更详细的信息<br>  拉取远程分支到本地: git checkout –track(跟踪关系) “主机名(origin)/分支名”<br>  如果远程直接新建的要先 git remote update 一下<br>  合并分支: git merge 分支名 //在某个分支上将指定分支拉取过来</p>
+<pre><code>如果有冲突，会自动建立一个临时分支 &lt;&lt;&lt;&lt;Head ... ==== ---- &gt;&gt;&gt;&gt;testing  改好提交就行行了
+</code></pre><p>  git clone -b 分支名 仓库地址 //克隆仓库中指定分支内容<br>  git push –set-upstream origin 分支名  //提交到指定分支(当前所在的分支)</p>
+<p>  重置暂存区: git reset 文件名/HEAD(所有)  (仅仅重置暂存区,返回add操作之前)</p>
+<pre><code>git reset --hard  //重置掉当前工作目录回到上一次提交danq
 
-    (优先级依次降低 如果三个配置文件中都有同样的配置优先以本地为准)
-</code></pre><p>==&gt;  git config –[local/global/system] obj.键 + 空格 + 值 //修改、添加配置</p>
-<p>==&gt;  git config –[local/global/system] –unset obj.键  //删除配置</p>
-<p>==================git分区</p>
-<p>==&gt; 工作区 (.git 所在的工作目录)</p>
-<p>==&gt; 暂存区</p>
-<p>==&gt; 仓库 （.git 这个目录就是仓库）</p>
-<p>==&gt; git status 查看文件状态</p>
-<pre><code>刚新建的文件/修改 --&gt; 未跟踪的文件（红色不会被提交）
+git reset --hard HEAD^ 回到上两次提交 以此类推
 
-git add 文件名/夹  --&gt; 成为跟踪文件 (绿色)
-git rm --cached 文件名 --&gt; 取消跟踪状态
-
-git commit -m &quot;提交说明&quot; || 
-
-git commit 回车(进入编辑器) --&gt; i(进入编辑模式) --&gt; esc (退出编辑模式) --&gt; :wq(保存并退出)
-
-链接 : git remote add origin  http.. || ssh
-
-推送 : git push -u origin master(分支)  (第二次就直接push就行了)
-</code></pre><p>==&gt; git pull 拉取远程仓库内容到本地(更新)</p>
-<p>==&gt; git branch 分支名 //新建分支</p>
-<pre><code>git branch 分支名 &apos;commit id&apos; //基于某一次提交的分支
-
-git branch  //查看分支 前面有 * 的就是当前指向的分支(head指向的分支)
-
-git branch -a //显示隐藏分支
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">如果你现快速的代上面的分支，你可以直接切换到那个分支：</span><br><span class="line"></span><br><span class="line">$ git checkout origin/experimental</span><br><span class="line"></span><br><span class="line">但是，如果你想在那个分支工作的话，你就需要创建一个本地分支：</span><br><span class="line"></span><br><span class="line">$ git checkout -b experimental origin/experimental</span><br><span class="line"></span><br><span class="line">现在，如果你看看你的本地分支，你会看到：</span><br><span class="line"></span><br><span class="line">$ git branch</span><br><span class="line">  master</span><br><span class="line">* experimental</span><br><span class="line"></span><br><span class="line">你还可以用git remote命令跟踪多个远程分支</span><br><span class="line"></span><br><span class="line">$ git remote add win32 git://gutup.com/users/joe/myproject-linux-port</span><br><span class="line">$ git branch -a</span><br><span class="line">* master</span><br><span class="line">  origin/HEAD</span><br><span class="line">  origin/master</span><br><span class="line">  origin/v1.0-stable</span><br><span class="line">  origin/experimental</span><br><span class="line">  linux/master</span><br><span class="line">  linux/new-widgets</span><br></pre></td></tr></table></figure>
-
-git branch -d 分支名 //删除分支
-           -D 强制删除没有合并的分支
-
-git checkout 分支名 //切换到该分支(会检出该分支最后一次提交的代码到工作区)
-
-git checkout -b 分支名 // -b表示创建并切换
-
-git branch -v  查看本地与远程分支的同步信息 -vv 更详细的信息
-
-拉取远程分支到本地: git checkout --track(跟踪关系) &quot;主机名(origin)/分支名&quot;
-                    如果远程直接新建的要先 git remote update 一下
-
-合并分支: git merge 分支名 //在某个分支上将指定分支拉取过来
-          如果有冲突，会自动建立一个临时分支 &lt;&lt;&lt;&lt;Head ... ==== ---- &gt;&gt;&gt;&gt;testing  改好提交就行行了
-
-git clone -b 分支名 仓库地址 //克隆仓库中指定分支内容
-git push --set-upstream origin 分支名  //提交到指定分支(当前所在的分支)
-
-重置暂存区: git reset 文件名/HEAD(所有)  (仅仅重置暂存区,返回add操作之前)
-
-            git reset --hard  //重置掉当前工作目录回到上一次提交danq
-
-            git reset --hard HEAD^ 回到上两次提交 以此类推
-
-            git reset --hard &quot;commit id&quot; 回到指定提交
-
-git reflog //记录每一次提交操作，包括重置掉的id
-</code></pre><p>==&gt; git clone http.. || ssh  克隆远程仓库</p>
-<p>==&gt; git checkout 检出文件(当一个文件改错了 想从历史中拿一个版本来替换是做的)</p>
-<pre><code>git checkout  通过commit id 指定哪个版本(没指定的话就用最近一次提交的版本) 文件名
-</code></pre><p>==&gt; git status //贮藏工作区(保存当前修改又不想提交的文件 之后)</p>
-<pre><code>git status show 查看贮藏内容
-
-git status pop 取出贮藏内容
-</code></pre><p>==&gt; 忽略文件 （成功之后查看状态时就不会显示它了）</p>
-<pre><code>1、工作区根目录下 创建文件 .gitignore 文件
-
-2、规定忽略规则(在文件里写入文件/文件夹名就好 可以是路径（更多...）)
-
-3、该文件可存在于个个目录
-</code></pre><p>==&gt; git log 查看日志</p>
-<p>   1、commit id  重要</p>
+git reset --hard &quot;commit id&quot; 回到指定提交
+</code></pre><p>  git reflog //记录每一次提交操作，包括重置掉的id</p>
+</li>
+<li><p>git clone http.. || ssh  克隆远程仓库</p>
+</li>
+<li><p>git checkout 检出文件(当一个文件改错了 想从历史中拿一个版本来替换是做的)</p>
+<p>  git checkout  通过commit id 指定哪个版本(没指定的话就用最近一次提交的版本) 文件名</p>
+</li>
+</ul>
+<ul>
+<li><p>git status //贮藏工作区(保存当前修改又不想提交的文件 之后)</p>
+<p>  git status show 查看贮藏内容</p>
+<p>  git status pop 取出贮藏内容</p>
+</li>
+</ul>
+<ul>
+<li><p>忽略文件 （成功之后查看状态时就不会显示它了）</p>
+<p>  1、工作区根目录下 创建文件 .gitignore 文件<br>  2、规定忽略规则(在文件里写入文件/文件夹名就好 可以是路径（更多…）)<br>  3、该文件可存在于个个目录</p>
+</li>
+<li><p>git log 查看日志<br> 1、git log 查看所有更新上面的是最新的<br> 2、commit id  重要</p>
+</li>
+</ul>
 <hr>
 <h2 id="SSH-key-设置"><a href="#SSH-key-设置" class="headerlink" title="SSH key 设置"></a>SSH key 设置</h2><blockquote>
 <p>设备的key添加到远程仓库(GitHub、开源中国等)上，这个设备就可以网那个GitHub账户上push东西了</p>
@@ -624,7 +613,7 @@ git status pop 取出贮藏内容
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT基础"><span class="nav-number">1.</span> <span class="nav-text">GIT基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-key-设置"><span class="nav-number">2.</span> <span class="nav-text">SSH key 设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">2.1.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT基础"><span class="nav-number">1.</span> <span class="nav-text">GIT基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git基本配置"><span class="nav-number">1.1.</span> <span class="nav-text">git基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git分区"><span class="nav-number">1.2.</span> <span class="nav-text">git分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-key-设置"><span class="nav-number">2.</span> <span class="nav-text">SSH key 设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">2.1.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></div>
             
 
           </div>

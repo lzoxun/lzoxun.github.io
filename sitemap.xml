@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/12/10/Git%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2019-01-07T08:52:42.227Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/12/30/web%E5%89%8D%E7%AB%AF%E5%AD%98%E5%82%A8/</loc>
     
     <lastmod>2018-12-31T14:20:44.922Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://yoursite.com/2018/12/28/hexo%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2018-12-29T05:54:15.004Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/12/10/Git%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/</loc>
-    
-    <lastmod>2018-12-29T05:49:53.506Z</lastmod>
     
   </url>
   
