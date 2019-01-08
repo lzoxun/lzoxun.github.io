@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Lzo勋">
 <meta property="og:description" content="GIT基础git基本配置 git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） git init  //创建本地git仓库 git config -h //帮助 git config –list  //查看git所有配置 git help config //网页显示打开帮助手册   git 配置分为三部分 1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-07T08:52:42.227Z">
+<meta property="og:updated_time" content="2019-01-08T01:04:50.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用基础">
 <meta name="twitter:description" content="GIT基础git基本配置 git命令中一般 - 跟简称 – 跟全称 （ 如: -h/–help） git init  //创建本地git仓库 git config -h //帮助 git config –list  //查看git所有配置 git help config //网页显示打开帮助手册   git 配置分为三部分 1、本地配置位于本地仓库的隐藏文件夹.git/config 文件  默认以">
@@ -374,7 +374,7 @@
 </blockquote>
 </li>
 </ul>
-<p>刚新建的文件/修改 –&gt; 未跟踪的文件（红色不会被提交）<br>    git add 文件名/夹  –&gt; 成为跟踪文件 (绿色)<br>    git diff  //对比的是尚未暂存的内容（add后就不贵它管了）<br>    git diff –cached //查看已经暂存起的变化<br>    git rm –cached 文件名 –&gt; 取消跟踪状态<br>    git mv oldname newname //改名<br>    git commit -m “提交说明” ||<br>    git commit 回车(进入编辑器) –&gt; i(进入编辑模式) –&gt; esc (退出编辑模式) –&gt; :wq(保存并退出)<br>    git commit -a -m (跳过add,只要一起add过后面修改加上-a就不需要重复add了)<br>    链接 : git remote add origin  http.. || ssh<br>    推送 : git push -u origin master(分支)  (第二次就直接push就行了)</p>
+<p>刚新建的文件/修改 –&gt; 未跟踪的文件（红色不会被提交）<br>    git add 文件名/夹  –&gt; 成为跟踪文件 (绿色)<br>    git diff  //对比的是尚未暂存的内容（add后就不贵它管了）<br>    git diff –cached //查看已经暂存起的变化<br>    git rm –cached 文件名 –&gt; 取消跟踪状态<br>    git mv oldname newname //改名<br>    git commit -m “提交说明” ||<br>    git commit 回车(进入编辑器) –&gt; i(进入编辑模式) –&gt; esc (退出编辑模式) –&gt; :wq(保存并退出)<br>    git commit -a -m (跳过add,只要一起add过后面修改加上-a就不需要重复add了)<br>    git commit –amend //撤销本次提交<br>    链接 : git remote add origin  http.. || ssh<br>    推送 : git push -u origin master(分支)  (第二次就直接push就行了)</p>
 <ul>
 <li>git pull 拉取远程仓库内容到本地(更新)</li>
 <li><p>git branch 分支名 //新建分支<br>  git branch 分支名 ‘commit id’ //基于某一次提交的分支<br>  git branch  //查看分支 前面有 * 的就是当前指向的分支(head指向的分支)<br>  git branch -a //显示隐藏分支</p>
@@ -404,11 +404,14 @@ git reset --hard &quot;commit id&quot; 回到指定提交
 <p>  git status pop 取出贮藏内容</p>
 </li>
 </ul>
-<ul>
-<li><p>忽略文件 （成功之后查看状态时就不会显示它了）</p>
-<p>  1、工作区根目录下 创建文件 .gitignore 文件<br>  2、规定忽略规则(在文件里写入文件/文件夹名就好 可以是路径（更多…）)<br>  3、该文件可存在于个个目录</p>
-</li>
-<li><p>git log 查看日志<br> 1、git log 查看所有更新上面的是最新的<br> 2、commit id  重要</p>
+<h3 id="忽略文件-（成功之后查看状态时就不会显示它了）"><a href="#忽略文件-（成功之后查看状态时就不会显示它了）" class="headerlink" title="忽略文件 （成功之后查看状态时就不会显示它了）"></a>忽略文件 （成功之后查看状态时就不会显示它了）</h3><pre><code>1、工作区根目录下 创建文件 .gitignore 文件
+2、规定忽略规则(在文件里写入文件/文件夹名就好 可以是路径（更多...）)
+3、该文件可存在于个个目录
+</code></pre><h3 id="设置标签"><a href="#设置标签" class="headerlink" title="设置标签"></a>设置标签</h3><p>   git tag命令给第二次提交加上一个名叫important的tag。<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag &apos;important&apos; 723687a</span><br></pre></td></tr></table></figure></p>
+<h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><ul>
+<li><p>git log 查看日志<br> 1、git log 查看所有更新上面的是最新的<br> 2、git log –oneline 简化显示<br> 3、git log -[length] 显示指定数目<br> 4、git log –skip=[number] 指定跳过前几条</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --skip=1 -2 --oneline  //查看第二三条记录</span><br></pre></td></tr></table></figure>
+<p> 5、git log –pretty=raw  //详细显示，输出的信息中包括提交ID，文件树ID，父提交ID，作者和提交者<br> 6、git log -p //输出信息更多包括改动记录<br> 7、git log –decorate //显示一些相关的信息，如HEAD、分支名、tag名等<br> 8、git log –name-status  //会带出每次提交对应的文件改动。<br> 2、commit id  重要 </p>
 </li>
 </ul>
 <hr>
@@ -613,7 +616,7 @@ git reset --hard &quot;commit id&quot; 回到指定提交
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT基础"><span class="nav-number">1.</span> <span class="nav-text">GIT基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git基本配置"><span class="nav-number">1.1.</span> <span class="nav-text">git基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git分区"><span class="nav-number">1.2.</span> <span class="nav-text">git分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-key-设置"><span class="nav-number">2.</span> <span class="nav-text">SSH key 设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">2.1.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT基础"><span class="nav-number">1.</span> <span class="nav-text">GIT基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git基本配置"><span class="nav-number">1.1.</span> <span class="nav-text">git基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git分区"><span class="nav-number">1.2.</span> <span class="nav-text">git分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忽略文件-（成功之后查看状态时就不会显示它了）"><span class="nav-number">1.3.</span> <span class="nav-text">忽略文件 （成功之后查看状态时就不会显示它了）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置标签"><span class="nav-number">1.4.</span> <span class="nav-text">设置标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志"><span class="nav-number">1.5.</span> <span class="nav-text">日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-key-设置"><span class="nav-number">2.</span> <span class="nav-text">SSH key 设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">2.1.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></div>
             
 
           </div>
